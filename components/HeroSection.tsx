@@ -1,0 +1,95 @@
+import {Truck, Zap} from "lucide-react";
+
+import {Button} from "@/components/ui/button";
+
+import Image from "next/image";
+
+export default function HeroSection() {
+
+    return(
+        <section className={'relative h-screen bg-background flex flex-col justify-center items-center p-10 overflow-hidden'}>
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute top-1/2 -left-20 w-60 h-60 bg-accent/30 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/50 rounded-full blur-3xl" />
+            </div>
+
+            <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-20">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    {/* Left Content */}
+                    <div className="order-2 lg:order-1 space-y-8">
+
+                        {/* Heading */}
+                        <div className="space-y-4">
+                            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-foreground text-balance animate-slide-up">
+                                Alătură-te în{" "}
+                                <span className="text-primary relative">
+                                    Protejarea
+                                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/30" viewBox="0 0 200 12" preserveAspectRatio="none">
+                                        <path d="M0,8 Q50,0 100,8 T200,8" fill="none" stroke="currentColor" strokeWidth="3" />
+                                    </svg>
+                                </span>{" "}
+                                Planetei
+                            </h1>
+                            <p className="text-sm text-muted-foreground max-w-xl leading-relaxed animate-slide-up animation-delay-100">
+                                Eco Elite oferă servicii profesionale de colectare și reciclare pentru persoane fizice și companii.
+                                Deșeuri feroase, neferoase și echipamente electrice și electrocasnice. Noi le transformăm în resurse valoroase.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-3 max-w-md">
+
+                            <Button className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>
+                                Solicită o ofertă acum !
+                            </Button>
+
+                            <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>
+                                Află mai mult
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Right Content - Image and Cards */}
+                    <div className="order-1 lg:order-2 relative hidden md:block ">
+                        <div className="relative animate-fade-in animation-delay-100">
+                            {/* Main Image */}
+                            <div className="relative w-full aspect-square max-w-2xl mx-auto">
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/30 rounded-3xl rotate-6 scale-115" />
+                                <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl">
+                                    <Image
+                                        src="/images/recycling-hero-4.png"
+                                        alt="Reciclare eco-friendly - mână ținând o plantă verde"
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={'absolute bg-primary/40 backdrop-blur-2xl rounded-2xl p-4 shadow-xl border border-border/50 max-w-[240px] animate-float bottom-4 -left-4 lg:bottom-10 lg:-left-30'}>
+                                <div className="flex items-start gap-3">
+                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-card flex items-center justify-center">
+                                        <Truck className="h-5 w-5 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-black text-sm text-primary-foreground">Transport Gratuit</h3>
+                                        <p className="text-sm font-semibold text-gray-200 mt-1 leading-relaxed">Venim la tine pentru colectare, fără costuri suplimentare.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Services Badge */}
+                            <div className="absolute bottom-4 right-4 lg:-bottom-5 lg:right-2 bg-primary text-primary-foreground rounded-full px-4 py-2 shadow-lg animate-bounce-subtle">
+                                <div className="flex items-center gap-2">
+                                    <Zap className="h-4 w-4" />
+                                    <span className="text-sm font-medium">DEEE & Metale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}

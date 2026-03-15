@@ -128,3 +128,22 @@
     @apply font-sans;
   }
 }
+
+@layer utilities {
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .animate-float {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .animation-delay-500 {
+        animation-delay: 0.5s;
+    }
+}
