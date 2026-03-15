@@ -1,4 +1,4 @@
-import {Truck, Zap} from "lucide-react";
+import {Briefcase, Recycle, Truck, Zap} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
 
@@ -53,7 +53,7 @@ export default function HeroSection() {
                     <div className="order-1 lg:order-2 relative hidden md:block ">
                         <div className="relative animate-fade-in animation-delay-100">
                             {/* Main Image */}
-                            <div className="relative w-full aspect-square max-w-2xl mx-auto">
+                            <div className="relative w-full aspect-square max-w-lg mx-auto">
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/30 rounded-3xl rotate-6 scale-115" />
                                 <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl">
                                     <Image
@@ -67,17 +67,52 @@ export default function HeroSection() {
                                 </div>
                             </div>
 
-                            <div className={'absolute bg-primary/40 backdrop-blur-2xl rounded-2xl p-4 shadow-xl border border-border/50 max-w-[240px] animate-float bottom-4 -left-4 lg:bottom-10 lg:-left-30'}>
+                            {/*<div className={'absolute bg-primary/40 backdrop-blur-2xl rounded-2xl p-4 shadow-xl border border-border/50 max-w-[240px] animate-float bottom-4 -left-4 lg:bottom-10 lg:-left-30'}>*/}
+                            {/*    <div className="flex items-start gap-3">*/}
+                            {/*        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-card flex items-center justify-center">*/}
+                            {/*            <Truck className="h-5 w-5 text-primary" />*/}
+                            {/*        </div>*/}
+                            {/*        <div>*/}
+                            {/*            <h3 className="font-black text-sm text-primary-foreground">Transport Gratuit</h3>*/}
+                            {/*            <p className="text-sm font-semibold text-gray-200 mt-1 leading-relaxed">Venim la tine pentru colectare, fără costuri suplimentare.</p>*/}
+                            {/*        </div>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+
+                            <div className={'absolute max-w-[240px] animate-float animation-delay-2500 top-34 right-14'}>
                                 <div className="flex items-start gap-3">
-                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-card flex items-center justify-center">
-                                        <Truck className="h-5 w-5 text-primary" />
+                                    <div className="w-12 h-12 z-10 rounded-full bg-card flex items-center justify-center">
+                                        <Briefcase className="h-6 w-10 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-black text-sm text-primary-foreground">Transport Gratuit</h3>
-                                        <p className="text-sm font-semibold text-gray-200 mt-1 leading-relaxed">Venim la tine pentru colectare, fără costuri suplimentare.</p>
+                                        <h3 className="absolute left-7 top-5 h-auto text-sm whitespace-nowrap p-3 text-primary-foreground px-6 font-bold flex justify-center items-center bg-primary/40 backdrop-blur-2xl rounded-full shadow-xl border border-border/50">Profesionalism</h3>
                                     </div>
                                 </div>
                             </div>
+
+                            <div className={'absolute max-w-[240px] animate-float bottom-14 left-25'}>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-12 h-12 z-10 rounded-full bg-card flex items-center justify-center">
+                                        <Recycle className="h-6 w-10 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h3 className="absolute right-10 top-5 h-auto text-sm whitespace-nowrap p-3 text-primary-foreground px-8 font-bold flex justify-center items-center bg-primary/40 backdrop-blur-2xl rounded-full shadow-xl border border-border/50">Reciclare Responsabilă</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={'absolute max-w-[240px] animate-float animation-delay-1000 top-14 right-80'}>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-12 h-12 z-10 rounded-full bg-card flex items-center justify-center">
+                                        <Truck className="h-6 w-10 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h3 className="absolute right-10 -top-5 h-auto text-sm whitespace-nowrap p-3 text-primary-foreground px-8 font-bold flex justify-center items-center bg-primary/40 backdrop-blur-2xl rounded-full shadow-xl border border-border/50">Transport Gratuit</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+
 
                             {/* Services Badge */}
                             <div className="absolute bottom-4 right-4 lg:-bottom-5 lg:right-2 bg-primary text-primary-foreground rounded-full px-4 py-2 shadow-lg animate-bounce-subtle">
