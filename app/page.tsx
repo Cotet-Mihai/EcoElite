@@ -1,7 +1,11 @@
 import HeroSection from "@/components/HeroSection";
+import TargetAudience from "@/components/TargetAudience";
 
 export default function Home() {
   return (
-      <HeroSection/>
+      <main>
+          <HeroSection/>
+          <TargetAudience/>
+      </main>
   );
 }
