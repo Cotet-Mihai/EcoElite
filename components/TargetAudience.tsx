@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 
 export default function TargetAudience() {
     return (
-        <section className="py-24 px-6 lg:px-8 lg:h-screen flex flex-col overflow-hidden">
+        <section className="py-24 px-6 mx-10 lg:px-8 lg:h-screen flex flex-col overflow-hidden">
             <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
 
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-12 shrink-0">
                     <div>
-                        <h2 className="text-5xl font-bold tracking-tight">
+                        <h2 className="font-serif text-5xl font-bold tracking-tight">
                             Cui ne adresăm?
                         </h2>
                         <p className="text-muted-foreground mt-3 max-w-2xl">
@@ -21,7 +21,7 @@ export default function TargetAudience() {
                         </p>
                     </div>
 
-                    <Button variant="outline" className="rounded-full mt-4 md:mt-0">
+                    <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>
                         Află mai mult
                     </Button>
                 </div>
@@ -39,7 +39,7 @@ export default function TargetAudience() {
                         <div className="absolute inset-0 bg-gray-400/10" />
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-3xl font-semibold uppercase">
+                                <h3 className="text-3xl font-semibold uppercase ">
                                     PRODUCĂTORI & IMPORTATORI
                                 </h3>
                                 <p className="mt-4 max-w-sm text-sm text-muted-foreground">
