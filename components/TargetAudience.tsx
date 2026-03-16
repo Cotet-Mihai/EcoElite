@@ -87,7 +87,7 @@ export default function TargetAudience() {
                                     PERSOANE FIZICE
                                 </h3>
                                 <p className="mt-3 text-sm text-muted-foreground">
-                                    Ai aparate vechi? Îți arătăm <br/> unde și cum le poți recicla.
+                                    Ai aparate vechi? Noi venim <br/> să le preluăm pentru reciclare.
                                 </p>
                             </div>
                         </div>
