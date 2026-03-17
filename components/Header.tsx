@@ -15,9 +15,10 @@ import {
 
 const navigation = [
     { name: "Acasă", href: "#" },
-    { name: "Despre noi", href: "#" },
     { name: "Servicii", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Calculator", href: "#" },
+    { name: "Despre noi", href: "#" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {

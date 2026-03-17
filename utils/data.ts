@@ -17,5 +17,7 @@ export const COMPANY = {
     'email': 'office@ecoelite.ro',
     'instagram': '#',
     'facebook': '#',
-    'linkedIn': '#'
+    'linkedIn': '#',
+    'programInWeek': '08:00 - 17:00',
+    'programSaturday': '08:00 - 13:00'
 }

@@ -14,7 +14,7 @@ const contact = [
 
 export default function ContactForm() {
     return (
-        <section className="py-24 px-6 lg:px-10 bg-white">
+        <section className="pt-24 px-6 lg:px-10 bg-white">
             <div className="max-w-7xl mx-auto">
 
 
@@ -115,7 +115,7 @@ export default function ContactForm() {
                                         <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">
                                             Validare date
                                         </span>
-                                        <span className="font-serif text-3xl font-bold text-foreground">
+                                        <span className="font-serif text-2xl md:text-3xl font-bold text-foreground">
                                             Trimite Acum
                                         </span>
                                     </div>

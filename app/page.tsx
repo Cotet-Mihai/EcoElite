@@ -13,7 +13,9 @@ export default function Home() {
           <Calculator/>
           <MissionSection/>
           <FAQSection/>
-          <ContactForm/>
+          <div className={'mb-24'}>
+              <ContactForm/>
+          </div>
       </main>
   );
 }
