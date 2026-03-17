@@ -150,7 +150,7 @@ export default function TermsAndConditions() {
                                 <span className="font-serif text-xl font-bold text-foreground">Contactează-ne</span>
                             </div>
                             <div className="w-12 h-12 rounded-full bg-foreground flex items-center justify-center group-hover:bg-primary transition-all duration-500">
-                                <ChevronRight className="text-primary group-hover:text-black transition-colors" size={20} />
+                                <ChevronRight className="text-primary group-hover:text-foreground transition-colors" size={20} />
                             </div>
                         </button>
                     </Link>

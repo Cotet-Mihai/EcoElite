@@ -111,7 +111,7 @@ export default function Footer() {
                         © {currentYear} EcoElite Romania. Toate drepturile rezervate.
                     </p>
                     <div className="flex gap-8 text-[10px] uppercase tracking-widest text-white/30">
-                        <Link href="/termeni" className="hover:text-white transition-colors">Termeni și Condiții</Link>
+                        <Link href="/termeni-si-conditii" className="hover:text-white transition-colors">Termeni și Condiții</Link>
                         <Link href="/politica-cookies" className="hover:text-white transition-colors">Politica Cookies</Link>
                     </div>
                 </div>
