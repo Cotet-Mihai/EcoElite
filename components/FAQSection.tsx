@@ -66,12 +66,12 @@ export default function FAQSection() {
                         >
                             <AccordionTrigger className="flex py-6 lg:py-8 hover:no-underline group text-left transition-all [&[data-state=open]>svg]:text-primary">
                                 <div className="flex items-start gap-4 lg:gap-6 pr-4">
-                  <span className="font-sans text-[10px] font-black text-primary/40 group-data-[state=open]:text-primary transition-colors pt-1">
-                    {faq.index}
-                  </span>
-                                    <span className="font-serif text-lg lg:text-2xl font-bold text-[#0D1611] leading-tight group-hover:text-primary transition-colors">
-                    {faq.question}
-                  </span>
+                                    <span className="font-sans text-[10px] font-black text-primary/40 group-data-[state=open]:text-primary transition-colors pt-1">
+                                        {faq.index}
+                                    </span>
+                                    <span className="font-serif text-lg lg:text-2xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
+                                        {faq.question}
+                                    </span>
                                 </div>
                             </AccordionTrigger>
 
