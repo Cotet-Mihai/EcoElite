@@ -96,8 +96,10 @@ export function Header() {
                                 <Button className="w-full max-w-xs rounded-full h-14 font-bold text-base shadow-xl shadow-primary/20 uppercase">
                                     Solicită o ofertă
                                 </Button>
-                                <p className="text-[10px] uppercase font-black tracking-widest text-muted-foreground">
-                                    Suport telefonic: {COMPANY.phone}
+                                <p className="text-[10px] uppercase font-black tracking-widest text-muted-foreground mt-8">
+                                    Suport telefonic: <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className={'text-foreground'}>
+                                    {COMPANY.phone}
+                                </a>
                                 </p>
                             </SheetFooter>
                         </SheetContent>

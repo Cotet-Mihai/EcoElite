@@ -59,15 +59,21 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm text-white/70">
                             <li className="flex items-center gap-3">
                                 <Phone size={18} className="text-primary shrink-0" />
-                                <span>{COMPANY.phone}</span>
+                                <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`}>
+                                    {COMPANY.phone}
+                                </a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail size={18} className="text-primary shrink-0" />
-                                <span>{COMPANY.email}</span>
+                                <a href={`mailto:${COMPANY.email}`}>
+                                    {COMPANY.email}
+                                </a>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin size={18} className="text-primary shrink-0" />
-                                <span>{COMPANY.address}</span>
+                                <a href="https://www.google.com/maps/place/%C8%98oseaua+Andronache+254,+022529+Bucure%C8%99ti/@44.4809802,26.1593634,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1f85a6480795d:0x394ff62066cd7956!8m2!3d44.4809802!4d26.1619383!16s%2Fg%2F11qnvn_lz5?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D" target={'_blank'}>
+                                    {COMPANY.address}
+                                </a>
                             </li>
                         </ul>
                     </div>

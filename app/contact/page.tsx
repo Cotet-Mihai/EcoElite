@@ -62,9 +62,13 @@ export default function ContactPage() {
                                 <MapPin size={16} className="text-primary" strokeWidth={2.5} />
                                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground">Locație</span>
                             </div>
-                            <p className="font-serif text-xl font-bold text-foreground leading-snug mb-8">
+                            <a
+                                href="https://www.google.com/maps/place/%C8%98oseaua+Andronache+254,+022529+Bucure%C8%99ti/@44.4809802,26.1593634,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1f85a6480795d:0x394ff62066cd7956!8m2!3d44.4809802!4d26.1619383!16s%2Fg%2F11qnvn_lz5?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D"
+                                target={'_blank'}
+                                className="font-serif text-xl font-bold text-foreground leading-snug mb-8"
+                            >
                                 {COMPANY.address}
-                            </p>
+                            </a>
                         </div>
                         <div className="border-t border-foreground/5 pt-6 space-y-3">
                             <div className="flex items-center gap-2 mb-3">
