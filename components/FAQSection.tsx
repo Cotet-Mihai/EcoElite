@@ -6,6 +6,8 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
+import {COMPANY} from "@/utils/data";
 
 const faqs = [
     {
@@ -27,7 +29,7 @@ const faqs = [
         index: "03",
         question: "Oferiți servicii de transport pentru cantități mari?",
         answer:
-            "Da, EcoElite pune la dispoziție o flotă modernă de camioane dotate cu macara și containere de diverse capacități pentru colectarea deșeurilor direct de la sediul dumneavoastră sau de pe șantier.",
+            `Da, ${COMPANY.name} pune la dispoziție o flotă modernă de camioane dotate cu macara și containere de diverse capacități pentru colectarea deșeurilor direct de la sediul dumneavoastră sau de pe șantier.`,
     },
     {
         id: "item-4",
@@ -40,7 +42,7 @@ const faqs = [
 
 export default function FAQSection() {
     return (
-        <section className="py-24 px-6 lg:px-10 bg-white">
+        <section className="pt-24 px-6 lg:px-10 bg-white">
             <div className="max-w-4xl mx-auto">
 
                 {/* Header - Rămâne identic */}
@@ -52,7 +54,7 @@ export default function FAQSection() {
                         Întrebări <span className="italic text-primary">Frecvente</span>
                     </h2>
                     <p className="text-muted-foreground max-w-lg mx-auto text-sm lg:text-base">
-                        Tot ce trebuie să știi despre procesul de reciclare, prețuri și logistica EcoElite.
+                        Tot ce trebuie să știi despre procesul de reciclare, prețuri și logistica {COMPANY.name}.
                     </p>
                 </div>
 
@@ -87,9 +89,9 @@ export default function FAQSection() {
                 {/* Buton Contact Final */}
                 <div className="mt-20 flex justify-center">
                     <button className="group flex items-center gap-4 py-3 px-8 rounded-full border border-border hover:border-primary transition-all duration-300">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary-foreground">
+                    <Link href={'/contact'} className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary-foreground">
                       Încă ai nelămuriri? Contactează-ne
-                    </span>
+                    </Link>
                         <div className="w-1.5 h-1.5 rounded-full bg-primary group-hover:scale-[2] transition-transform" />
                     </button>
                 </div>

@@ -13,7 +13,7 @@ import {METALS} from "@/utils/data";
 
 export default function PriceCalculator() {
     const [selectedId, setSelectedId] = useState(METALS[0].id);
-    const [amount, setAmount] = useState("1");
+    const [amount, setAmount] = useState('');
 
     const activeMetal = useMemo(() => METALS.find(m => m.id === selectedId), [selectedId]);
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight, Cookie, ShieldCheck, Info, Settings } from "lucide-react";
+import {COMPANY} from "@/utils/data";
 
 export default function CookiePolicy() {
     const currentYear = new Date().getFullYear();
@@ -108,7 +109,7 @@ export default function CookiePolicy() {
                 {/* Footer Document - Call to action */}
                 <div className="mt-24 pt-12 border-t border-foreground/5 flex flex-col md:flex-row items-center justify-between gap-8">
                     <p className="text-muted-foreground text-[10px] uppercase tracking-widest font-medium">
-                        © {currentYear} Eco Elite SRL. Document revizuit.
+                        © 2026 {COMPANY.name} {COMPANY.legalForm} Toate drepturile rezervate.
                     </p>
 
                     <Link href="/contact">

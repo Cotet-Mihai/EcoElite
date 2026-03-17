@@ -12,6 +12,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
+import {COMPANY} from "@/utils/data";
 
 const navigation = [
     { name: "Acasă", href: "#" },
@@ -92,11 +93,11 @@ export function Header() {
                             </div>
 
                             <SheetFooter className="flex-col sm:flex-col gap-4 pb-12 items-center">
-                                <Button className="w-full max-w-xs rounded-full h-14 font-bold text-base shadow-xl shadow-primary/20">
-                                    Programează o ridicare
+                                <Button className="w-full max-w-xs rounded-full h-14 font-bold text-base shadow-xl shadow-primary/20 uppercase">
+                                    Solicită o ofertă
                                 </Button>
                                 <p className="text-[10px] uppercase font-black tracking-widest text-muted-foreground">
-                                    Suport telefonic: +40 7xx xxx xxx
+                                    Suport telefonic: {COMPANY.phone}
                                 </p>
                             </SheetFooter>
                         </SheetContent>

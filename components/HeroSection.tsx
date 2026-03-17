@@ -39,8 +39,8 @@ export default function HeroSection() {
 
                         <div className="flex flex-col sm:flex-row gap-3 max-w-md">
 
-                            <Button className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>
-                                Solicită o ofertă acum !
+                            <Button className={'h-12 px-6 rounded-full transition-all duration-300 hover:scale-105 uppercase font-bold'}>
+                                Solicită o ofertă
                             </Button>
 
                             <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>

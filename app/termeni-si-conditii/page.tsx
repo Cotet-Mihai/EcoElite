@@ -141,7 +141,7 @@ export default function TermsAndConditions() {
                 {/* Footer Document - Call to action */}
                 <div className="mt-24 pt-12 border-t border-foreground/5 flex flex-col md:flex-row items-center justify-between gap-8">
                     <p className="text-muted-foreground text-[10px] uppercase tracking-widest font-medium">
-                        © {currentYear} {COMPANY.name} {COMPANY.legalForm}. Toate drepturile rezervate.
+                        © 2026 {COMPANY.name} {COMPANY.legalForm} Toate drepturile rezervate.
                     </p>
 
                     <Link href="/contact">

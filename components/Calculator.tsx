@@ -53,7 +53,7 @@ export default function Calculator() {
 
                         <div className="mt-8 relative z-10">
                             <p className="text-xs text-muted-foreground uppercase tracking-widest">
-                                * Prețurile sunt informative și se confirmă la recepție
+                                * Prețurile sunt informative
                             </p>
                         </div>
 
