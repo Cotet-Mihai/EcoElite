@@ -1,0 +1,106 @@
+"use client";
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Recycle} from "lucide-react";
+
+export default function Footer() {
+    const currentYear = new Date().getFullYear();
+
+    return (
+        <footer className="bg-white pt-12">
+            {/* Container principal cu fundalul Obsidian pentru a face legătura cu secțiunea Mission */}
+            <div className="max-w-7xl mx-auto bg-[#0D1611] rounded-t-[3rem] px-8 pt-16 pb-8 text-white relative overflow-hidden">
+
+                {/* Decor subtil de fundal */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full" />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+
+                    {/* Coloana 1: Branding & Slogan */}
+                    <div className="space-y-6">
+                        <div className="flex items-center gap-2">
+                            <Recycle className="h-8 w-8 text-primary" />
+                            <span className="font-serif text-2xl font-bold tracking-tighter italic text-white">
+                                Eco<span className="text-primary">Elite</span>
+                            </span>
+                        </div>
+                        <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+                            Transformăm deșeurile de astăzi în resursele de mâine prin soluții de reciclare inteligente și sustenabile.
+                        </p>
+                        <div className="flex gap-4">
+                            <Link href="#" className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
+                                <Instagram size={18} />
+                            </Link>
+                            <Link href="#" className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
+                                <Facebook size={18} />
+                            </Link>
+                            <Link href="#" className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
+                                <Linkedin size={18} />
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Coloana 2: Link-uri Rapide */}
+                    <div className="space-y-6">
+                        <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Navigație</h4>
+                        <ul className="space-y-4 text-sm text-white/70">
+                            <li><Link href="/" className="hover:text-primary transition-colors">Acasă</Link></li>
+                            <li><Link href="/servicii" className="hover:text-primary transition-colors">Servicii Colectare</Link></li>
+                            <li><Link href="/preturi" className="hover:text-primary transition-colors">Cotații Metale</Link></li>
+                            <li><Link href="/despre" className="hover:text-primary transition-colors">Despre Noi</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Coloana 3: Contact */}
+                    <div className="space-y-6">
+                        <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Contact</h4>
+                        <ul className="space-y-4 text-sm text-white/70">
+                            <li className="flex items-start gap-3">
+                                <MapPin size={18} className="text-primary shrink-0" />
+                                <span>Strada Reciclării Nr. 12,<br />București, România</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <Phone size={18} className="text-primary shrink-0" />
+                                <span>+40 7xx xxx xxx</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <Mail size={18} className="text-primary shrink-0" />
+                                <span>contact@metalrecycle.ro</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Coloana 4: Newsletter/CTA */}
+                    <div className="space-y-6">
+                        <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Newsletter</h4>
+                        <p className="text-white/50 text-sm">Abonează-te pentru a primi cele mai noi cotații bursiere.</p>
+                        <div className="flex flex-col gap-2">
+                            <input
+                                type="email"
+                                placeholder="Email-ul tău"
+                                className="bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary transition-colors"
+                            />
+                            <Button className="rounded-full bg-primary text-black font-bold hover:bg-primary/90">
+                                Abonare
+                            </Button>
+                        </div>
+                    </div>
+
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-white/30 text-[10px] uppercase tracking-widest">
+                        © {currentYear} MetalRecycle Romania. Toate drepturile rezervate.
+                    </p>
+                    <div className="flex gap-8 text-[10px] uppercase tracking-widest text-white/30">
+                        <Link href="/termeni" className="hover:text-white transition-colors">Termeni și Condiții</Link>
+                        <Link href="/politica-cookies" className="hover:text-white transition-colors">Politica Cookies</Link>
+                        <Link href="/anpc" className="hover:text-white transition-colors">ANPC</Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+}
