@@ -94,15 +94,16 @@ export default function TargetAudience() {
                     </Card>
 
                     {/* Card 4 */}
-                    <Card className="relative overflow-hidden rounded-3xl group h-[200px] lg:h-full">
-                        <Image
-                            src="/images/plant.jpg"
-                            alt=""
-                            fill
-                            className="object-cover transition duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gray-400/10" />
-                    </Card>
+
+                        <Card className="relative overflow-hidden rounded-3xl group h-[200px] lg:h-full">
+                            <Image
+                                src="/images/plant.jpg"
+                                alt=""
+                                fill
+                                className="object-cover transition duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gray-400/10" />
+                        </Card>
 
                 </div>
             </div>
