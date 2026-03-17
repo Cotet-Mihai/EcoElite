@@ -35,7 +35,7 @@ export default function PriceCalculator() {
         <div className="rounded-3xl p-8 flex flex-col justify-between h-full relative overflow-hidden group">
 
             <div className="relative z-10">
-                <h3 className="text-2xl font-semibold uppercase mb-8 tracking-wider font-serif">
+                <h3 className="text-2xl font-semibold uppercase mb-8 tracking-wider font-serif text-foreground">
                     Calculator profit
                 </h3>
 
@@ -55,7 +55,9 @@ export default function PriceCalculator() {
                                             <SelectItem key={m.id} value={m.id} className="py-3 font-bold uppercase text-xs">
                                                 <div className="flex items-center gap-2  p-1">
                                                     <div className={`w-2 h-2 rounded-full ${m.color}`} />
-                                                    {m.name}
+                                                    <span className={'text-foreground'}>
+                                                        {m.name}
+                                                    </span>
                                                 </div>
                                             </SelectItem>
                                         ))}
@@ -74,7 +76,7 @@ export default function PriceCalculator() {
                                 type="number"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
-                                className="border-none bg-transparent shadow-none p-0 h-auto text-xl font-bold focus-visible:ring-0"
+                                className="border-none bg-transparent shadow-none p-0 h-auto text-xl font-bold focus-visible:ring-0 text-foreground"
                                 placeholder="Ex: 100"
                             />
 

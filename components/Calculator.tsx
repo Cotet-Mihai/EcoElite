@@ -36,7 +36,7 @@ export default function Calculator() {
                     {/* Div STÂNGA: Prețuri stilizate ca Bento Card */}
                     <Card className="rounded-3xl border-none bg-gray-50 p-8 flex flex-col justify-between overflow-hidden relative group">
                         <div className="relative z-10">
-                            <h3 className="text-2xl font-semibold uppercase mb-8 tracking-wider font-serif">
+                            <h3 className="text-2xl font-semibold uppercase mb-8 tracking-wider font-serif text-foreground">
                                 Cotații actuale
                             </h3>
 
@@ -48,7 +48,7 @@ export default function Calculator() {
                                     >
                                         <div className="flex items-center gap-4">
                                             <div className={`w-3 h-3 rounded-full ${metal.color}`} />
-                                            <span className="font-bold text-lg uppercase tracking-tight">{metal.name}</span>
+                                            <span className="font-bold text-lg uppercase tracking-tight text-foreground">{metal.name}</span>
                                         </div>
                                         <span className="font-serif text-2xl font-bold text-primary">
                                           {metal.price}
