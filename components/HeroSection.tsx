@@ -67,18 +67,6 @@ export default function HeroSection() {
                                 </div>
                             </div>
 
-                            {/*<div className={'absolute bg-primary/40 backdrop-blur-2xl rounded-2xl p-4 shadow-xl border border-border/50 max-w-[240px] animate-float bottom-4 -left-4 lg:bottom-10 lg:-left-30'}>*/}
-                            {/*    <div className="flex items-start gap-3">*/}
-                            {/*        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-card flex items-center justify-center">*/}
-                            {/*            <Truck className="h-5 w-5 text-primary" />*/}
-                            {/*        </div>*/}
-                            {/*        <div>*/}
-                            {/*            <h3 className="font-black text-sm text-primary-foreground">Transport Gratuit</h3>*/}
-                            {/*            <p className="text-sm font-semibold text-gray-200 mt-1 leading-relaxed">Venim la tine pentru colectare, fără costuri suplimentare.</p>*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-
                             <div className={'absolute max-w-[240px] animate-float animation-delay-2500 top-34 right-14'}>
                                 <div className="flex items-start gap-3">
                                     <div className="w-12 h-12 z-10 rounded-full bg-card flex items-center justify-center">

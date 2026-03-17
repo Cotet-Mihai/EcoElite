@@ -11,7 +11,7 @@ export default function TargetAudience() {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-12 shrink-0">
                     <div>
-                        <h2 className="font-serif text-5xl font-bold tracking-tight">
+                        <h2 className="font-serif text-6xl lg:text-5xl font-bold tracking-tight">
                             Cui ne adresăm?
                         </h2>
                         <p className="text-muted-foreground mt-3 max-w-2xl">
@@ -21,7 +21,7 @@ export default function TargetAudience() {
                         </p>
                     </div>
 
-                    <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>
+                    <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105 mt-10 ml-auto'}>
                         Află mai mult
                     </Button>
                 </div>
@@ -39,8 +39,8 @@ export default function TargetAudience() {
                         <div className="absolute inset-0 bg-gray-400/10" />
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-3xl font-semibold uppercase ">
-                                    PRODUCĂTORI & IMPORTATORI
+                                <h3 className="text-3xl font-semibold uppercase font-serif text-foreground">
+                                    PRODUCĂTORI
                                 </h3>
                                 <p className="mt-4 max-w-sm text-sm text-muted-foreground">
                                     Introduci echipamente electrice și electronice pe piață?
@@ -61,7 +61,7 @@ export default function TargetAudience() {
                         <div className="absolute inset-0 bg-gray-400/10" />
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-3xl font-semibold uppercase">
+                                <h3 className="text-3xl font-semibold uppercase  font-serif text-foreground">
                                     DISTRIBUITORI
                                 </h3>
                                 <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -83,7 +83,7 @@ export default function TargetAudience() {
                         <div className="absolute inset-0 bg-gray-400/10" />
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-2xl font-semibold uppercase">
+                                <h3 className="text-3xl font-semibold uppercase  font-serif text-foreground">
                                     PERSOANE FIZICE
                                 </h3>
                                 <p className="mt-3 text-sm text-muted-foreground">
@@ -94,8 +94,7 @@ export default function TargetAudience() {
                     </Card>
 
                     {/* Card 4 */}
-
-                        <Card className="relative overflow-hidden rounded-3xl group h-[200px] lg:h-full">
+                        <Card className="relative overflow-hidden rounded-3xl group h-[200px] lg:h-full hidden lg:block">
                             <Image
                                 src="/images/plant.jpg"
                                 alt=""
