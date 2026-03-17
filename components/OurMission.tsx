@@ -40,12 +40,12 @@ export default function MissionSection() {
                             <span className="text-secondary uppercase tracking-[0.3em] font-black text-xs">
                                 Cine suntem noi
                             </span>
-                            <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-tight text-secondary">
+                            <h2 className="font-serif text-4xl lg:text-5xl font-black leading-tight text-secondary">
                                 Misiunea noastră pentru viitor.
                             </h2>
                         </div>
 
-                        <p className="text-foreground text-base leading-relaxed max-w-xl font-medium">
+                        <p className="text-secondary font-bold leading-relaxed max-w-xl text-lg">
                             Nu ne limităm doar la colectarea deșeurilor. Obiectivul nostru este să transformăm
                             fiecare gram de metal într-o resursă nouă, reducând amprenta de carbon.
                         </p>
