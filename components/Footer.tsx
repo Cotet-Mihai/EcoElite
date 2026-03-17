@@ -18,10 +18,12 @@ export default function Footer() {
                     {/* Coloana 1: Branding & Slogan */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-2">
-                            <Recycle className="h-8 w-8 text-primary" />
-                            <span className="font-serif text-2xl font-bold tracking-tighter italic text-white">
-                                Eco<span className="text-primary">Elite</span>
-                            </span>
+                            <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2 group">
+                                <Recycle className="h-8 w-8 text-primary transition-transform duration-500 group-hover:rotate-180" />
+                                <span className="font-serif text-2xl font-bold tracking-tighter italic text-white">
+                                    Eco<span className="text-primary">Elite</span>
+                                </span>
+                            </Link>
                         </div>
                         <p className="text-white/50 text-sm leading-relaxed max-w-xs">
                             Transformăm deșeurile de astăzi în resursele de mâine prin soluții de reciclare inteligente și sustenabile.
