@@ -18,7 +18,7 @@ export default function StatsRibbon() {
                 </div>
             </div>
 
-            <div className="absolute z-20 w-[120%] -left-[10%] rotate-[3deg] bg-black py-6 shadow-2xl mt-4">
+            <div className="absolute z-20 w-[120%] -left-[10%] rotate-[3deg] bg-foreground py-6 shadow-2xl mt-4">
                 <div className="flex whitespace-nowrap animate-marquee-infinite text-white font-bold uppercase text-2xl md:text-6xl">
                     {[...Array(4)].map((_, i) => (
                         <span key={i} className="mx-4">{textBlack}</span>

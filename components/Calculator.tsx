@@ -4,17 +4,16 @@ import PriceCalculator from "@/components/PriceCalculator";
 
 export default function Calculator() {
     const metalPrices = [
-        { name: "Fier", price: "10 lei/kg", color: 'bg-zinc-400' },      // Gri metalic industrial
-        { name: "Cupru", price: "35 lei/kg", color: 'bg-orange-400' },   // Cupru vibrant
-        { name: "Aluminiu", price: "8 lei/kg", color: 'bg-slate-200' },  // Argintiu deschis
-        { name: "Plumb", price: "12 lei/kg", color: 'bg-blue-900/40' },  // Gri-albăstrui dens
-        { name: "Inox", price: "15 lei/kg", color: 'bg-stone-300' },    // Gri neutru lucios
-        { name: "Alamă", price: "22 lei/kg", color: 'bg-yellow-500/50' },// Auriu mat/murdar
+        { name: "Fier", price: "0.8 lei/kg", color: 'bg-zinc-400' },
+        { name: "Cupru", price: "42 lei/kg", color: 'bg-orange-400' },
+        { name: "Aluminiu", price: "4 lei/kg", color: 'bg-slate-200' },
+        { name: "Plumb", price: "4 lei/kg", color: 'bg-blue-900/40' },
+        { name: "Inox", price: "2 lei/kg", color: 'bg-stone-300' },
+        { name: "Alamă", price: "22 lei/kg", color: 'bg-yellow-500/50' },
     ];
 
     return (
-        <section className="flex flex-col bg-white">
-            {/* Marquee rămâne elementul de contrast industrial */}
+        <section className="flex flex-col bg-white min-h-screen">
             <MarqueeSection />
 
             <div className="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-10 py-12 flex flex-col">
