@@ -3,6 +3,7 @@ import TargetAudience from "@/components/TargetAudience";
 import Calculator from "@/components/Calculator";
 import MissionSection from "@/components/OurMission";
 import FAQSection from "@/components/FAQSection";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           <Calculator/>
           <MissionSection/>
           <FAQSection/>
+          <ContactForm/>
       </main>
   );
 }
