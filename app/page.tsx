@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import TargetAudience from "@/components/TargetAudience";
 import Calculator from "@/components/Calculator";
 import MissionSection from "@/components/OurMission";
+import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
           <TargetAudience/>
           <Calculator/>
           <MissionSection/>
+          <FAQSection/>
       </main>
   );
 }

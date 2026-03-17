@@ -1,8 +1,6 @@
-"use client";
-
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Recycle} from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -10,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-white pt-12">
             {/* Container principal cu fundalul Obsidian pentru a face legătura cu secțiunea Mission */}
-            <div className="max-w-7xl mx-auto bg-[#0D1611] rounded-t-[3rem] px-8 pt-16 pb-8 text-white relative overflow-hidden">
+            <div className="max-w-7xl mx-auto bg-secondary-foreground rounded-t-[3rem] px-8 pt-16 pb-8 text-white relative overflow-hidden">
 
                 {/* Decor subtil de fundal */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full" />
@@ -66,24 +64,40 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail size={18} className="text-primary shrink-0" />
-                                <span>contact@metalrecycle.ro</span>
+                                <span>contact@ecoelite.ro</span>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Coloana 4: Newsletter/CTA */}
+                    {/* Coloana 4: ANPC - Direct din public/images/ */}
                     <div className="space-y-6">
-                        <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Newsletter</h4>
-                        <p className="text-white/50 text-sm">Abonează-te pentru a primi cele mai noi cotații bursiere.</p>
-                        <div className="flex flex-col gap-2">
-                            <input
-                                type="email"
-                                placeholder="Email-ul tău"
-                                className="bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary transition-colors"
-                            />
-                            <Button className="rounded-full bg-primary text-black font-bold hover:bg-primary/90">
-                                Abonare
-                            </Button>
+                        <div className="flex flex-col gap-3">
+                            <Link
+                                href="https://anpc.ro/ce-este-sal/"
+                                target="_blank"
+                                className="transition-opacity hover:opacity-80"
+                            >
+                                <Image
+                                    src="/images/anpc-sal.png"
+                                    alt="ANPC SAL"
+                                    width={250}
+                                    height={70}
+                                    className="rounded-lg border border-white/10"
+                                />
+                            </Link>
+                            <Link
+                                href="https://consumer-redress.ec.europa.eu/index_en"
+                                target="_blank"
+                                className="transition-opacity hover:opacity-80"
+                            >
+                                <Image
+                                    src="/images/anpc-sol.png"
+                                    alt="ANPC SOL"
+                                    width={250}
+                                    height={70}
+                                    className="rounded-lg border border-white/10"
+                                />
+                            </Link>
                         </div>
                     </div>
 
@@ -92,12 +106,11 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-white/30 text-[10px] uppercase tracking-widest">
-                        © {currentYear} MetalRecycle Romania. Toate drepturile rezervate.
+                        © {currentYear} EcoElite Romania. Toate drepturile rezervate.
                     </p>
                     <div className="flex gap-8 text-[10px] uppercase tracking-widest text-white/30">
                         <Link href="/termeni" className="hover:text-white transition-colors">Termeni și Condiții</Link>
                         <Link href="/politica-cookies" className="hover:text-white transition-colors">Politica Cookies</Link>
-                        <Link href="/anpc" className="hover:text-white transition-colors">ANPC</Link>
                     </div>
                 </div>
             </div>
