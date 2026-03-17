@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ChevronRight, Cookie, ShieldCheck, Info, Settings } from "lucide-react";
 

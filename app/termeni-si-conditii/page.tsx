@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ChevronRight, ShieldCheck, Scale, FileText, AlertCircle } from "lucide-react";
+import { ChevronRight, Scale } from "lucide-react";
+import {COMPANY} from "@/utils/data";
 
 export default function TermsAndConditions() {
     const currentYear = new Date().getFullYear();
@@ -33,7 +34,7 @@ export default function TermsAndConditions() {
                         </div>
                         <div className="pl-9 space-y-4">
                             <p>
-                                Site-ul <span className="font-bold">www.ecoelite.ro</span> este proprietatea exclusivă a societății <span className="text-[#0D1611] font-bold">ECO ELITE SRL</span>, cu sediul social în București, înregistrată la Registrul Comerțului sub nr. Jxx/xxxx/xxxx, CUI ROxxxxxxx.
+                                Site-ul <span className="font-bold">www.ecoelite.ro</span> este proprietatea exclusivă a societății <span className="text-secondary-foreground font-bold">{COMPANY.name} {COMPANY.legalForm}</span>, cu sediul social în {COMPANY.address}, înregistrată la Registrul Comerțului sub nr. {COMPANY.registrationNumber}, CUI {COMPANY.cui}.
                             </p>
                             <p>
                                 Suntem o unitate autorizată pentru colectarea și valorificarea deșeurilor reciclabile (feroase, neferoase, DEEE), operând în conformitate cu legislația de mediu în vigoare în România.
@@ -60,7 +61,7 @@ export default function TermsAndConditions() {
                             </div>
 
                             <p>
-                                <span className="font-bold text-foreground">Eco Elite SRL</span> își rezervă dreptul de a modifica, actualiza sau șterge orice secțiune a Termenilor și Condițiilor, precum și conținutul site-ului, în orice moment, fără o notificare prealabilă a utilizatorilor.
+                                <span className="font-bold text-foreground">{COMPANY.name} {COMPANY.legalForm}</span> își rezervă dreptul de a modifica, actualiza sau șterge orice secțiune a Termenilor și Condițiilor, precum și conținutul site-ului, în orice moment, fără o notificare prealabilă a utilizatorilor.
                             </p>
                             <p className="text-sm italic border-t border-foreground/5 pt-4">
                                 Continuarea utilizării site-ului după orice modificare reprezintă acceptul dumneavoastră tacit față de noile condiții. Vă recomandăm să consultați periodic această pagină pentru a fi la curent cu ultima versiune aplicabilă.
@@ -104,7 +105,7 @@ export default function TermsAndConditions() {
                             </p>
                             <ul className="list-disc pl-5 space-y-2 marker:text-primary">
                                 <li>Cotațiile se bazează pe bursa metalelor (LME) și pot varia zilnic.</li>
-                                <li>Eco Elite SRL își rezervă dreptul de a refuza deșeuri care nu respectă normele de siguranță sau mediu (ex: materiale explozive, recipiente sub presiune necurățate).</li>
+                                <li>{COMPANY.name} {COMPANY.legalForm} își rezervă dreptul de a refuza deșeuri care nu respectă normele de siguranță sau mediu (ex: materiale explozive, recipiente sub presiune necurățate).</li>
                             </ul>
                         </div>
                     </div>
@@ -117,7 +118,7 @@ export default function TermsAndConditions() {
                         </div>
                         <div className="pl-9">
                             <p>
-                                Întreg conținutul (texte, imagini, logo-uri, grafică) este proprietatea Eco Elite SRL. Copierea, reproducerea sau distribuirea acestuia în scopuri comerciale fără acordul nostru scris este strict interzisă și se pedepsește conform Legii 8/1996.
+                                Întreg conținutul (texte, imagini, logo-uri, grafică) este proprietatea {COMPANY.name} {COMPANY.legalForm}. Copierea, reproducerea sau distribuirea acestuia în scopuri comerciale fără acordul nostru scris este strict interzisă și se pedepsește conform Legii 8/1996.
                             </p>
                         </div>
                     </div>
@@ -130,7 +131,7 @@ export default function TermsAndConditions() {
                         </div>
                         <div className="pl-9">
                             <p>
-                                Eco Elite SRL nu garantează că site-ul va funcționa neîntrerupt sau fără erori. Nu suntem responsabili pentru eventuale prejudicii cauzate de utilizarea informațiilor de pe site sau de imposibilitatea accesării acestuia.
+                                {COMPANY.name} {COMPANY.legalForm} nu garantează că site-ul va funcționa neîntrerupt sau fără erori. Nu suntem responsabili pentru eventuale prejudicii cauzate de utilizarea informațiilor de pe site sau de imposibilitatea accesării acestuia.
                             </p>
                         </div>
                     </div>
@@ -140,7 +141,7 @@ export default function TermsAndConditions() {
                 {/* Footer Document - Call to action */}
                 <div className="mt-24 pt-12 border-t border-foreground/5 flex flex-col md:flex-row items-center justify-between gap-8">
                     <p className="text-muted-foreground text-[10px] uppercase tracking-widest font-medium">
-                        © {currentYear} Eco Elite SRL. Toate drepturile rezervate.
+                        © {currentYear} {COMPANY.name} {COMPANY.legalForm}. Toate drepturile rezervate.
                     </p>
 
                     <Link href="/contact">

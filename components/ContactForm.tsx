@@ -1,15 +1,15 @@
 "use client";
 
-import { Mail, Phone, MapPin, ChevronRight, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {Button} from "@/components/ui/button";
+import {COMPANY} from "@/utils/data";
 
 const contact = [
-    { icon: Phone, label: "Telefon", val: "+40 7xx xxx xxx" },
-    { icon: Mail, label: "Email", val: "office@ecoelite.ro" },
-    { icon: MapPin, label: "Locație", val: "București, România" },
+    { icon: Phone, label: "Telefon", val: COMPANY.phone },
+    { icon: Mail, label: "Email", val: COMPANY.email },
+    { icon: MapPin, label: "Locație", val: COMPANY.address },
 ]
 
 export default function ContactForm() {
@@ -42,7 +42,7 @@ export default function ContactForm() {
                                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/30 italic">
                                             {item.label}
                                         </p>
-                                        <p className="font-serif text-xl font-bold text-foreground tracking-tight">
+                                        <p className=" text-xl font-bold text-foreground tracking-tight">
                                             {item.val}
                                         </p>
                                     </div>

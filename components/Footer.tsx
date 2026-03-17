@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Recycle} from "lucide-react";
 import Image from "next/image";
+import {COMPANY} from "@/utils/data";
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
 
     return (
         <footer className="bg-white pt-12">
@@ -29,13 +29,13 @@ export default function Footer() {
                             Transformăm deșeurile de astăzi în resursele de mâine prin soluții de reciclare inteligente și sustenabile.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="#" className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
+                            <Link href={COMPANY.instagram} className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
                                 <Instagram size={18} />
                             </Link>
-                            <Link href="#" className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
+                            <Link href={COMPANY.facebook} className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
                                 <Facebook size={18} />
                             </Link>
-                            <Link href="#" className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
+                            <Link href={COMPANY.linkedIn} className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
                                 <Linkedin size={18} />
                             </Link>
                         </div>
@@ -56,17 +56,17 @@ export default function Footer() {
                     <div className="space-y-6">
                         <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Contact</h4>
                         <ul className="space-y-4 text-sm text-white/70">
-                            <li className="flex items-start gap-3">
-                                <MapPin size={18} className="text-primary shrink-0" />
-                                <span>Strada Reciclării Nr. 12,<br />București, România</span>
-                            </li>
                             <li className="flex items-center gap-3">
                                 <Phone size={18} className="text-primary shrink-0" />
-                                <span>+40 7xx xxx xxx</span>
+                                <span>{COMPANY.phone}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail size={18} className="text-primary shrink-0" />
-                                <span>contact@ecoelite.ro</span>
+                                <span>{COMPANY.email}</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <MapPin size={18} className="text-primary shrink-0" />
+                                <span>{COMPANY.address}</span>
                             </li>
                         </ul>
                     </div>
@@ -108,7 +108,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-white/30 text-[10px] uppercase tracking-widest">
-                        © {currentYear} EcoElite Romania. Toate drepturile rezervate.
+                        © 2026 {COMPANY.name} {COMPANY.legalForm} Toate drepturile rezervate.
                     </p>
                     <div className="flex gap-8 text-[10px] uppercase tracking-widest text-white/30">
                         <Link href="/termeni-si-conditii" className="hover:text-white transition-colors">Termeni și Condiții</Link>

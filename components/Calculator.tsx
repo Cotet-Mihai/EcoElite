@@ -1,16 +1,9 @@
 import MarqueeSection from "@/components/StatsRibbon";
 import { Card } from "@/components/ui/card";
 import PriceCalculator from "@/components/PriceCalculator";
+import {METALS} from "@/utils/data";
 
 export default function Calculator() {
-    const metalPrices = [
-        { name: "Fier", price: "0.8 lei/kg", color: 'bg-zinc-400' },
-        { name: "Cupru", price: "42 lei/kg", color: 'bg-orange-400' },
-        { name: "Aluminiu", price: "4 lei/kg", color: 'bg-slate-200' },
-        { name: "Plumb", price: "4 lei/kg", color: 'bg-blue-900/40' },
-        { name: "Inox", price: "2 lei/kg", color: 'bg-stone-300' },
-        { name: "Alamă", price: "22 lei/kg", color: 'bg-yellow-500/50' },
-    ];
 
     return (
         <section className="flex flex-col bg-white min-h-screen">
@@ -41,7 +34,7 @@ export default function Calculator() {
                             </h3>
 
                             <div className="space-y-4">
-                                {metalPrices.map((metal, idx) => (
+                                {METALS.map((metal, idx) => (
                                     <div
                                         key={idx}
                                         className="flex justify-between items-center px-3 py-1 rounded-2xl bg-white border border-gray-100 shadow-sm transition-all hover:shadow-md"
@@ -51,7 +44,7 @@ export default function Calculator() {
                                             <span className="font-bold text-lg uppercase tracking-tight text-foreground">{metal.name}</span>
                                         </div>
                                         <span className="font-serif text-2xl font-bold text-primary">
-                                          {metal.price}
+                                          {metal.price} lei/kg
                                         </span>
                                     </div>
                                 ))}
