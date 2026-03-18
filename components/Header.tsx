@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, Recycle } from "lucide-react";
@@ -15,10 +13,8 @@ import {
 import {COMPANY} from "@/utils/data";
 
 const navigation = [
-    { name: "Acasă", href: "#" },
-    { name: "Servicii", href: "#" },
-    { name: "Calculator", href: "#" },
-    { name: "Despre noi", href: "#" },
+    { name: "Acasă", href: "/" },
+    { name: "Despre noi", href: "/despre-noi" },
     { name: "Contact", href: "/contact" },
 ];
 
