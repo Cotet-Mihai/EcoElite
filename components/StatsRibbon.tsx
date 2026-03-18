@@ -7,7 +7,7 @@ export default function StatsRibbon() {
     const textBlack = "1.000 puncte naționale de colectare / 285.000 tone DEEE colectate / 1.591 acțiuni în comunitate / ";
 
     return (
-        <div className="relative w-full overflow-hidden py-32 bg-background flex flex-col items-center justify-center">
+        <div className="relative w-full overflow-hidden py-32 bg-transparent flex flex-col items-center justify-center">
 
             <div className="relative z-10 w-[120%] -left-[10%] rotate-[-3deg] bg-primary/60 py-6 shadow-lg">
                 <div className="flex whitespace-nowrap animate-marquee-infinite-reverse text-black font-bold uppercase text-2xl md:text-6xl">

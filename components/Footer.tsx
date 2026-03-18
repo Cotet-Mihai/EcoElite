@@ -6,7 +6,7 @@ import {COMPANY} from "@/utils/data";
 export default function Footer() {
 
     return (
-        <footer className="bg-white pt-12">
+        <footer className="bg-transparent pt-12">
             {/* Container principal cu fundalul Obsidian pentru a face legătura cu secțiunea Mission */}
             <div className="max-w-7xl mx-auto bg-foreground rounded-t-[3rem] px-8 pt-16 pb-8 text-white relative overflow-hidden">
 

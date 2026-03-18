@@ -42,7 +42,7 @@ const faqs = [
 
 export default function FAQSection() {
     return (
-        <section className="pt-24 px-6 lg:px-10 bg-white">
+        <section className="pt-24 px-6 lg:px-10 bg-transparent">
             <div className="max-w-4xl mx-auto">
 
                 {/* Header - Rămâne identic */}

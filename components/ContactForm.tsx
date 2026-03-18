@@ -14,7 +14,7 @@ const contact = [
 
 export default function ContactForm() {
     return (
-        <section className="pt-24 px-6 lg:px-10 bg-white">
+        <section className="pt-24 px-6 lg:px-10 bg-transparent">
             <div className="max-w-7xl mx-auto">
 
 
@@ -52,7 +52,7 @@ export default function ContactForm() {
                     </div>
 
                     {/* Coloana 2: Formular (Col 8) */}
-                    <div className="lg:col-span-8 bg-foreground/[0.02] p-8 lg:p-12 rounded-[2rem] border border-foreground/5">
+                    <div className="lg:col-span-8 bg-muted p-8 lg:p-12 rounded-[2rem] border border-foreground/5">
                         <form className="space-y-12">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
 

@@ -1,13 +1,13 @@
-import MarqueeSection from "@/components/StatsRibbon";
 import { Card } from "@/components/ui/card";
 import PriceCalculator from "@/components/PriceCalculator";
 import {METALS} from "@/utils/data";
+import StatsRibbon from "@/components/StatsRibbon";
 
 export default function Calculator() {
 
     return (
-        <section className="flex flex-col bg-white min-h-screen">
-            <MarqueeSection />
+        <section className="flex flex-col bg-transparent min-h-screen">
+            <StatsRibbon />
 
             <div className="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-10 py-12 flex flex-col">
                 {/* Header similar cu TargetAudience */}
