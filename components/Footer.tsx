@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-white pt-12">
             {/* Container principal cu fundalul Obsidian pentru a face legătura cu secțiunea Mission */}
-            <div className="max-w-7xl mx-auto bg-secondary-foreground rounded-t-[3rem] px-8 pt-16 pb-8 text-white relative overflow-hidden">
+            <div className="max-w-7xl mx-auto bg-foreground rounded-t-[3rem] px-8 pt-16 pb-8 text-white relative overflow-hidden">
 
                 {/* Decor subtil de fundal */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full" />

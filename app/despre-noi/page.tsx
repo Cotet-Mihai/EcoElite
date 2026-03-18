@@ -92,7 +92,7 @@ export default function AboutPage() {
 
 
             {/* 4. VALORI CENTRALE (Dark Mode) */}
-            <div className="bg-[#0D1611] text-white py-32 px-6 lg:px-10 mx-5 rounded-[3rem] lg:rounded-[4rem] relative z-20">
+            <div className="bg-foreground text-white py-32 px-6 lg:px-10 mx-5 rounded-[3rem] lg:rounded-[4rem] relative z-20">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                         <div className="lg:col-span-5 relative lg:sticky lg:top-32 space-y-5">

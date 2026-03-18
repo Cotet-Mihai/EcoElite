@@ -8,12 +8,11 @@ import IndustrialFlux from "@/components/TransformationFlow";
 
 export default function ContactPage() {
     return (
-        <section className="relative py-24 bg-white min-h-screen text-[#0D1611] overflow-hidden">
+        <section className="relative py-24 bg-white min-h-screen text-secondary-foreground overflow-hidden">
 
-            {/* Watermark de fundal pentru un aer modern */}
             <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0">
-                <h1 className="font-serif text-[22vw] font-black text-foreground/[0.02] leading-none uppercase tracking-tighter">
-                    Contact.
+                <h1 className="font-serif text-[22vw] font-black text-foreground/[0.03] leading-none uppercase tracking-tighter">
+                    Contact
                 </h1>
             </div>
 
@@ -88,7 +87,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* 03. Contact Direct - Dark Mode pentru a atrage privirea */}
-                    <div className="p-8 lg:p-10 rounded-[2rem] bg-[#0D1611] text-white shadow-xl relative overflow-hidden group flex flex-col justify-between">
+                    <div className="p-8 lg:p-10 rounded-[2rem] bg-foreground text-white shadow-xl relative overflow-hidden group flex flex-col justify-between">
                         {/* Accent vizual la hover */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-bl-full translate-x-10 -translate-y-10 group-hover:translate-x-0 group-hover:-translate-y-0 transition-transform duration-700" />
 
