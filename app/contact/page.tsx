@@ -4,6 +4,7 @@ import { Phone, MapPin, Building2, Clock, CircleUser } from "lucide-react";
 import CompanyMap from "@/components/CompanyMap";
 import ContactForm from "@/components/ContactForm";
 import { COMPANY } from "@/utils/data";
+import IndustrialFlux from "@/components/TransformationFlow";
 
 export default function ContactPage() {
     return (
@@ -123,11 +124,10 @@ export default function ContactPage() {
                         <CompanyMap />
                     </div>
                 </div>
-
+                <div className={'mt-24'}>
+                    <IndustrialFlux/>
+                </div>
                 <ContactForm />
-
-
-
             </div>
         </section>
     );

@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { ShieldCheck, Factory, Clock } from "lucide-react";
 import { COMPANY } from "@/utils/data";
+import ContactForm from "@/components/ContactForm";
+import MinimalTransition from "@/components/TransformationFlow";
+import StructuralTransition from "@/components/StructuralTransition";
 
 export default function AboutPage() {
     return (
@@ -10,7 +13,7 @@ export default function AboutPage() {
 
             <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0">
                 <h1 className="font-serif text-[22vw] font-black text-foreground/[0.02] leading-none uppercase tracking-tighter">
-                    despre noi
+                    despre
                 </h1>
             </div>
 
@@ -233,9 +236,51 @@ export default function AboutPage() {
 
                     </div>
                 </div>
+                {/* 6. CUI NE ADRESĂM - Stil Manifesto Adaptat */}
+                <div className="max-w-4xl mx-auto px-6 lg:px-10 mb-32 text-center md:text-left pt-32 border-t border-foreground/5">
+                    {/* Badge Subtil */}
+                    <div className="flex items-center gap-3 text-primary mb-8 justify-center md:justify-start">
+                        <div className="h-[1px] w-8 bg-primary" />
+                        <span className="uppercase tracking-[0.4em] font-black text-[9px]">Parteneriate Strategice</span>
+                    </div>
+
+                    <h2 className="font-serif text-3xl md:text-5xl font-light leading-tight mb-12">
+                        De la responsabilitatea extinsă a producătorului la gospodării. Oferim <span className="font-bold italic text-primary">soluții de colectare adaptate</span> pentru întreg lanțul valoric.
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-muted-foreground leading-relaxed text-sm md:text-base border-t border-foreground/10 pt-12">
+                        <div className="space-y-8">
+                            <div>
+                                <strong className="text-foreground block mb-2 uppercase tracking-wider text-[10px] font-black">01. Producători & Importatori</strong>
+                                <p>
+                                    Susținem companiile care introduc produse pe piață în îndeplinirea obligațiilor de mediu. Oferim trasabilitate completă pentru deșeurile generate în procesul de producție și soluții eficiente pentru gestionarea stocurilor neconforme sau a ambalajelor industriale.
+                                </p>
+                            </div>
+                            <div>
+                                <strong className="text-foreground block mb-2 uppercase tracking-wider text-[10px] font-black">02. Distribuitori & Retail</strong>
+                                <p>
+                                    Colaborăm cu rețelele de distribuție pentru colectarea deșeurilor electrice și electronice (DEEE) provenite din retururi sau campanii de tip buy-back, transformând logistica inversă într-un proces simplu, sustenabil și 100% conform legii.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="space-y-8">
+                            <div>
+                                <strong className="text-foreground block mb-2 uppercase tracking-wider text-[10px] font-black">03. Persoane Fizice</strong>
+                                <p>
+                                    Credem că schimbarea începe de la individ. Oferim cetățenilor un punct de acces sigur și transparent pentru reciclarea responsabilă a aparatelor electrocasnice vechi și a resturilor metalice casnice, asigurându-ne că nicio resursă valoroasă nu ajunge la groapa de gunoi.
+                                </p>
+                            </div>
+                            <div className="pt-4">
+                                <p className="italic text-xs border-l-2 border-primary/30 pl-4 py-1">
+                                    Indiferent de volum, {COMPANY.name} garantează un proces de colectare riguros, documentat și orientat către economia circulară.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <StructuralTransition/>
+                <ContactForm/>
             </div>
         </section>
-
-
     );
 }
