@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function TargetAudience() {
     return (
@@ -22,7 +23,9 @@ export default function TargetAudience() {
                     </div>
 
                     <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105 mt-10 ml-auto'}>
-                        Află mai mult
+                        <Link href={'/despre-noi'}>
+                            Află mai mult
+                        </Link>
                     </Button>
                 </div>
 

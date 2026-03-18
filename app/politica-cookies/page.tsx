@@ -9,8 +9,8 @@ export default function CookiePolicy() {
         <section className="py-24 px-6 lg:px-10 bg-white min-h-screen">
             <div className="max-w-4xl mx-auto">
 
-                <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0">
-                    <h1 className="font-serif text-[22vw] font-black text-foreground/[0.02] leading-none uppercase tracking-tighter">
+                <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0  hidden lg:block">
+                    <h1 className="font-serif text-[22vw] font-black text-foreground/[0.03] leading-none uppercase tracking-tighter">
                         cookies.
                     </h1>
                 </div>

@@ -4,7 +4,7 @@ import { Phone, MapPin, Building2, Clock, CircleUser } from "lucide-react";
 import CompanyMap from "@/components/CompanyMap";
 import ContactForm from "@/components/ContactForm";
 import { COMPANY } from "@/utils/data";
-import IndustrialFlux from "@/components/TransformationFlow";
+import IndustrialFlux from "@/components/IndustrialFlux";
 
 export default function ContactPage() {
     return (

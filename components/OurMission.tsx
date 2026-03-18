@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function MissionSection() {
     return (
@@ -53,10 +54,12 @@ export default function MissionSection() {
                         <div className="flex flex-col sm:flex-row gap-4 pt-2">
                             <Button
                                 variant='outline'
-                                className="h-12 px-8 rounded-full text-primary hover:bg-secondary-foreground hover:text-secondary border-none font-bold group text-sm hover:scale-102 transition-transform"
+                                className="h-12 rounded-full text-primary hover:bg-secondary-foreground hover:text-secondary border-none font-bold group text-sm hover:scale-102 transition-transform"
                             >
-                                Află Mai Mult
-                                <ArrowUpRight className="ml-2 w-4 h-4 group-hover:rotate-45 transition-transform text-primary" />
+                                <Link href={'/despre-noi'} className={'flex justify-center items-center w-full h-full  px-8'}>
+                                    Află Mai Mult
+                                    <ArrowUpRight className="ml-2 w-4 h-4 group-hover:rotate-45 transition-transform text-primary" />
+                                </Link>
                             </Button>
                         </div>
 

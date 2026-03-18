@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, Recycle } from "lucide-react";
 import {
-    Sheet,
+    Sheet, SheetClose,
     SheetContent,
     SheetDescription,
     SheetFooter,
@@ -17,6 +17,7 @@ const navigation = [
     { name: "Despre noi", href: "/despre-noi" },
     { name: "Contact", href: "/contact" },
 ];
+
 
 export function Header() {
     return (
@@ -51,51 +52,75 @@ export function Header() {
                 {/* Desktop CTA */}
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <Button className="rounded-full px-8 font-bold uppercase text-[10px] tracking-widest transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20">
-                        Contactează-ne
+                        <Link href={'/solicitare-oferta'}>
+                            solicita o ofertă
+                        </Link>
                     </Button>
                 </div>
 
                 {/* Mobile menu trigger */}
-                <div className="flex lg:hidden">
+                <div className="flex md:hidden">
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="rounded-full hover:bg-primary/10"
+                            >
                                 <Menu className="h-6 w-6" />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="top" className="flex flex-col rounded-b-[3rem] border-none bg-white h-[80vh]">
+
+                        <SheetContent
+                            side="top"
+                            className="flex flex-col rounded-b-[3rem] border-none bg-white h-[80vh]"
+                        >
+                            {/* HEADER */}
                             <SheetHeader className="items-center pt-8">
                                 <SheetTitle className="flex items-center gap-2">
                                     <Recycle className="h-8 w-8 text-primary" />
                                     <span className="font-serif text-3xl font-bold italic tracking-tighter">
-                                        Eco<span className="text-primary">Elite</span>
-                                    </span>
+                                Eco<span className="text-primary">Elite</span>
+                            </span>
                                 </SheetTitle>
+
                                 <SheetDescription className="font-medium tracking-wide">
                                     Din deșeuri, construim viitorul.
                                 </SheetDescription>
                             </SheetHeader>
 
+                            {/* NAVIGATION */}
                             <div className="flex flex-col items-center justify-center flex-1 gap-8 py-10">
                                 {navigation.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="text-2xl font-serif font-bold text-foreground hover:text-primary transition-colors"
-                                    >
-                                        {item.name}
-                                    </Link>
+                                    <SheetClose asChild key={item.name}>
+                                        <Link
+                                            href={item.href}
+                                            className="text-2xl font-serif font-bold text-foreground hover:text-primary transition-colors"
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </SheetClose>
                                 ))}
                             </div>
 
+                            {/* FOOTER */}
                             <SheetFooter className="flex-col sm:flex-col gap-4 pb-12 items-center">
-                                <Button className="w-full max-w-xs rounded-full h-14 font-bold text-base shadow-xl shadow-primary/20 uppercase">
-                                    Solicită o ofertă
-                                </Button>
+                                <SheetClose asChild>
+                                    <Button asChild className="w-full max-w-xs rounded-full h-14 font-bold text-base shadow-xl shadow-primary/20 uppercase">
+                                        <Link href="/solicitare-oferta">
+                                            Solicită o ofertă
+                                        </Link>
+                                    </Button>
+                                </SheetClose>
+
                                 <p className="text-[10px] uppercase font-black tracking-widest text-muted-foreground mt-8">
-                                    Suport telefonic: <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className={'text-foreground'}>
-                                    {COMPANY.phone}
-                                </a>
+                                    Suport telefonic:{" "}
+                                    <a
+                                        href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+                                        className="text-foreground"
+                                    >
+                                        {COMPANY.phone}
+                                    </a>
                                 </p>
                             </SheetFooter>
                         </SheetContent>

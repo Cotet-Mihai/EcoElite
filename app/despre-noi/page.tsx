@@ -4,15 +4,15 @@ import Image from "next/image";
 import { ShieldCheck, Factory, Clock } from "lucide-react";
 import { COMPANY } from "@/utils/data";
 import ContactForm from "@/components/ContactForm";
-import MinimalTransition from "@/components/TransformationFlow";
+import MinimalTransition from "@/components/IndustrialFlux";
 import StructuralTransition from "@/components/StructuralTransition";
 
 export default function AboutPage() {
     return (
         <section className="bg-white min-h-screen text-[#0D1611] overflow-hidden max-w-7xl mx-auto">
 
-            <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0">
-                <h1 className="font-serif text-[22vw] font-black text-foreground/[0.02] leading-none uppercase tracking-tighter">
+            <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0 hidden lg:block">
+                <h1 className="font-serif text-[22vw] font-black text-foreground/[0.03] leading-none uppercase tracking-tighter">
                     despre
                 </h1>
             </div>

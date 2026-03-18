@@ -10,6 +10,8 @@ import {
     SelectValue
 } from "@/components/ui/select";
 import {METALS} from "@/utils/data";
+import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 export default function PriceCalculator() {
     const [selectedId, setSelectedId] = useState(METALS[0].id);
@@ -28,7 +30,7 @@ export default function PriceCalculator() {
 
             <div className="relative z-10">
                 <h3 className="text-2xl font-semibold uppercase mb-8 tracking-wider font-serif text-foreground">
-                    Calculator profit
+                    Calculator rapid
                 </h3>
 
                 <div className="space-y-6">
@@ -78,18 +80,27 @@ export default function PriceCalculator() {
             </div>
 
             <div className="mt-8 relative z-10 pt-8 border-t border-dashed border-gray-200">
-                <div className="flex justify-between items-end">
-                    <div>
-                        <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">
-                            Total estimat de primit
-                        </p>
-                        <div className="flex items-baseline gap-2">
-              <span className="font-serif text-5xl font-bold text-primary">
+
+                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">
+                    Total estimat de primit
+                </p>
+
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+
+                    {/* PRICE */}
+                    <div className="flex items-baseline gap-2">
+            <span className="font-serif text-5xl font-bold text-primary">
                 {total}
-              </span>
-                            <span className="font-bold text-xl uppercase">Lei</span>
-                        </div>
+            </span>
+                        <span className="font-bold text-xl uppercase">Lei</span>
                     </div>
+
+                    {/* BUTTON */}
+                    <Button className="self-center sm:self-center rounded-full px-6 py-6 font-bold uppercase text-[10px] tracking-widest transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20">
+                        <Link href="/solicitare-oferta">
+                            solicita o ofertă
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </div>

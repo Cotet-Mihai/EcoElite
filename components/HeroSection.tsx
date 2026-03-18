@@ -3,6 +3,7 @@ import {Briefcase, Recycle, Truck, Zap} from "lucide-react";
 import {Button} from "@/components/ui/button";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
 
@@ -40,11 +41,15 @@ export default function HeroSection() {
                         <div className="flex flex-col sm:flex-row gap-3 max-w-md">
 
                             <Button className={'h-12 px-6 rounded-full transition-all duration-300 hover:scale-105 uppercase font-bold'}>
-                                Solicită o ofertă
+                                <Link href={'/solicitare-oferta'}>
+                                    Solicită o ofertă
+                                </Link>
                             </Button>
 
                             <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>
-                                Află mai mult
+                                <Link href={'/despre-noi'}>
+                                    Află mai mult
+                                </Link>
                             </Button>
                         </div>
                     </div>

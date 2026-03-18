@@ -46,9 +46,7 @@ export default function Footer() {
                         <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Navigație</h4>
                         <ul className="space-y-4 text-sm text-white/70">
                             <li><Link href="/" className="hover:text-primary transition-colors">Acasă</Link></li>
-                            <li><Link href="/servicii" className="hover:text-primary transition-colors">Servicii</Link></li>
-                            <li><Link href="/calculator" className="hover:text-primary transition-colors">Calculator</Link></li>
-                            <li><Link href="/despre" className="hover:text-primary transition-colors">Despre Noi</Link></li>
+                            <li><Link href="/despre-noi" className="hover:text-primary transition-colors">Despre Noi</Link></li>
                             <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
                         </ul>
                     </div>
