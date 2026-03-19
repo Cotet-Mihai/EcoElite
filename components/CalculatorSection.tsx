@@ -1,14 +1,11 @@
 import { Card } from "@/components/ui/card";
 import FastCalculator from "@/components/FastCalculator";
 import {METALS} from "@/utils/data";
-import StatsRibbon from "@/components/StatsRibbon";
 
 export default function CalculatorSection() {
 
     return (
         <section className="flex flex-col bg-transparent min-h-screen">
-            <StatsRibbon />
-
             <div className="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-10 py-12 flex flex-col">
                 {/* Header similar cu TargetAudience */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 shrink-0 bg-[#f9fafb] p-10 rounded-4xl">

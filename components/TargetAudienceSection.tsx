@@ -36,7 +36,7 @@ export default function TargetAudienceSection() {
                 {/* Card 1 */}
                 <Card className={'relative lg:row-span-2 overflow-hidden rounded-3xl group h-100 lg:h-full'}>
                     <Image
-                        src={'/images/phone.png'}
+                        src={'/images/phone-2.png'}
                         alt={'Secțiune despre producatori'}
                         fill
                         className={'object-cover object-[50%_60%] group-hover:scale-105 transition duration-500'}
@@ -56,7 +56,7 @@ export default function TargetAudienceSection() {
                 {/* Card 2 */}
                 <Card className={'relative lg:row-span-2 overflow-hidden rounded-3xl group h-100 lg:h-full'}>
                     <Image
-                        src={'/images/all.png'}
+                        src={'/images/all-2.png'}
                         alt={'Secțiune despre distribuitori'}
                         fill
                         className={'object-cover object-[50%_60%] group-hover:scale-105 transition duration-500'}

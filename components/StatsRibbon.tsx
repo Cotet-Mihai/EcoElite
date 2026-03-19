@@ -1,31 +1,27 @@
-"use client";
-
 import React from "react";
 
 export default function StatsRibbon() {
-    const textGreen = "1.591 acțiuni în comunitate / 285.000 tone DEEE colectate / 1.000 puncte naționale de colectare / ";
-    const textBlack = "1.000 puncte naționale de colectare / 285.000 tone DEEE colectate / 1.591 acțiuni în comunitate / ";
+    const primaryText = "1.591 acțiuni în comunitate / 285.000 tone DEEE colectate / 1.000 puncte naționale de colectare / ";
+    const secondaryTest = "1.000 puncte naționale de colectare / 285.000 tone DEEE colectate / 1.591 acțiuni în comunitate / ";
 
-    return (
-        <div className="relative w-full overflow-hidden py-32 bg-transparent flex flex-col items-center justify-center">
-
-            <div className="relative z-10 w-[120%] -left-[10%] rotate-[-3deg] bg-[#487d12] py-6 shadow-lg">
-                <div className="flex whitespace-nowrap animate-marquee-infinite-reverse text-black font-bold uppercase text-2xl md:text-6xl">
+    return(
+        <div className={'w-full pb-32 pt-20 flex flex-col items-center justify-center'}>
+            <div className="relative overflow-hidden z-10 w-[120%] -left-[20%] rotate-[-10deg] md:rotate-[-3deg] bg-secondary py-6 shadow-lg">
+                <div className="whitespace-nowrap overflow-hidden animate-marquee-infinite-reverse text-secondary-foreground font-bold uppercase text-2xl md:text-6xl">
                     {/* Repetăm de 4 ori pentru siguranță pe ecrane UltraWide */}
                     {[...Array(4)].map((_, i) => (
-                        <span key={i} className="mx-4">{textGreen}</span>
+                        <span key={i} className="mx-4">{primaryText}</span>
                     ))}
                 </div>
             </div>
 
-            <div className="absolute z-20 w-[120%] -left-[10%] rotate-[3deg] bg-[#416649] py-6 shadow-2xl mt-4">
-                <div className="flex whitespace-nowrap animate-marquee-infinite text-white font-bold uppercase text-2xl md:text-6xl">
+            <div className="absolute overflow-hidden z-20 w-[120%] -left-[10%] rotate-[3deg] bg-primary py-6 shadow-2xl mt-4">
+                <div className="whitespace-nowrap animate-marquee-infinite text-foreground font-bold uppercase text-2xl md:text-6xl">
                     {[...Array(4)].map((_, i) => (
-                        <span key={i} className="mx-4">{textBlack}</span>
+                        <span key={i} className="mx-4">{secondaryTest}</span>
                     ))}
                 </div>
             </div>
-
         </div>
-    );
+    )
 }
