@@ -17,11 +17,14 @@ export default function HeroSection() {
 
                         {/* Heading */}
                         <div className="space-y-4">
+                            {/* Modificat text-foreground in text-[#28402e] */}
                             <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-foreground text-balance animate-slide-up">
                                 Alătură-te în{" "}
-                                <span className="text-primary relative">
+                                {/* Modificat text-primary in text-[#5ea500] */}
+                                <span className="text-[#5ea500] relative">
                                     Protejarea
-                                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/30" viewBox="0 0 200 12" preserveAspectRatio="none">
+                                    {/* Modificat text-primary/30 in text-[#5ea500]/30 */}
+                                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-foreground/30" viewBox="0 0 200 12" preserveAspectRatio="none">
                                         <path d="M0,8 Q50,0 100,8 T200,8" fill="none" stroke="currentColor" strokeWidth="3" />
                                     </svg>
                                 </span>{" "}
@@ -34,14 +37,15 @@ export default function HeroSection() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-3 max-w-md">
-
-                            <Button className={'h-12 px-6 rounded-full transition-all duration-300 hover:scale-105 uppercase font-bold'}>
+                            {/* Modificat fundalul butonului in #5ea500 */}
+                            <Button className={'h-12 px-6 rounded-full bg-primary hover:bg-primary/90 text-white transition-all duration-300 hover:scale-105 uppercase font-bold'}>
                                 <Link href={'/solicitare-oferta'}>
                                     Solicită o ofertă
                                 </Link>
                             </Button>
 
-                            <Button  variant={'outline'} className={'h-12 px-6 rounded-full font-medium transition-all duration-300 hover:scale-105'}>
+                            {/* Modificat border-ul butonului in #28402e */}
+                            <Button variant={'outline'} className={'h-12 px-6 rounded-full border-foreground text-foreground hover:bg-secondary-foreground/5 font-medium transition-all duration-300 hover:scale-105'}>
                                 <Link href={'/despre-noi'}>
                                     Află mai mult
                                 </Link>
@@ -54,7 +58,8 @@ export default function HeroSection() {
                         <div className="relative animate-fade-in animation-delay-100">
                             {/* Main Image */}
                             <div className="relative w-full aspect-square max-w-lg mx-auto">
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/30 rounded-3xl rotate-6 scale-115" />
+                                {/* Modificat gradientul pentru a folosi noile culori */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/35 to-secondary-primary/10 rounded-3xl rotate-6 scale-115" />
                                 <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl">
                                     <Image
                                         src="/images/recycling-hero-4.png"
@@ -67,13 +72,14 @@ export default function HeroSection() {
                                 </div>
                             </div>
 
-                            <div className={'absolute max-w-[240px] animate-float animation-delay-2500 top-34 right-14'}>
+                            <div className={'absolute max-w-[240px] animate-float animation-delay-2500 top-34 right-20'}>
                                 <div className="flex items-start gap-3">
                                     <div className="w-12 h-12 z-10 rounded-full bg-card flex items-center justify-center">
                                         <Briefcase className="h-6 w-10 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="absolute left-7 top-5 h-auto text-sm whitespace-nowrap p-3 text-primary-foreground px-6 font-bold flex justify-center items-center bg-primary/40 backdrop-blur-2xl rounded-full shadow-xl border border-border/50">Profesionalism</h3>
+                                        {/* Modificat bg-primary/40 in bg-[#5ea500]/40 */}
+                                        <h3 className="absolute left-7 top-5 h-auto text-sm whitespace-nowrap p-3 text-white px-6 font-bold flex justify-center items-center bg-primary/20 backdrop-blur-xl rounded-full shadow-xl border border-primary/20">Profesionalism</h3>
                                     </div>
                                 </div>
                             </div>
@@ -84,28 +90,26 @@ export default function HeroSection() {
                                         <Recycle className="h-6 w-10 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="absolute right-10 top-5 h-auto text-sm whitespace-nowrap p-3 text-primary-foreground px-8 font-bold flex justify-center items-center bg-primary/40 backdrop-blur-2xl rounded-full shadow-xl border border-border/50">Reciclare Responsabilă</h3>
+                                        <h3 className="absolute right-10 top-5 h-auto text-sm whitespace-nowrap p-3 text-white px-8 font-bold flex justify-center items-center bg-primary/20 backdrop-blur-xl rounded-full shadow-xl border border-primary/20">Reciclare Responsabilă</h3>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className={'absolute max-w-[240px] animate-float animation-delay-1000 top-14 right-80'}>
+                            <div className={'absolute max-w-[240px] animate-float animation-delay-1000 top-14 right-85'}>
                                 <div className="flex items-start gap-3">
                                     <div className="w-12 h-12 z-10 rounded-full bg-card flex items-center justify-center">
                                         <Truck className="h-6 w-10 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="absolute right-10 -top-5 h-auto text-sm whitespace-nowrap p-3 text-primary-foreground px-8 font-bold flex justify-center items-center bg-primary/40 backdrop-blur-2xl rounded-full shadow-xl border border-border/50">Transport Gratuit</h3>
+                                        <h3 className="absolute right-10 -top-5 h-auto text-sm whitespace-nowrap p-3 text-white px-8 font-bold flex justify-center items-center bg-primary/20 backdrop-blur-xl rounded-full shadow-xl border border-primary/20">Transport Gratuit</h3>
                                     </div>
                                 </div>
                             </div>
 
-
-
-                            {/* Services Badge */}
-                            <div className="absolute bottom-4 right-4 lg:-bottom-5 lg:right-2 bg-primary text-primary-foreground rounded-full px-4 py-2 shadow-lg animate-bounce-subtle">
+                            {/* Services Badge - Modificat bg-primary in bg-[#28402e] */}
+                            <div className="absolute bottom-4 right-4 lg:-bottom-5 lg:right-2 bg-primary text-white rounded-full px-4 py-2 shadow-lg animate-bounce-subtle">
                                 <div className="flex items-center gap-2">
-                                    <Zap className="h-4 w-4" />
+                                    <Zap className="h-4 w-4 text-white" />
                                     <span className="text-sm font-medium">DEEE & Metale</span>
                                 </div>
                             </div>

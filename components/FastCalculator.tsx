@@ -13,7 +13,7 @@ import {METALS} from "@/utils/data";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 
-export default function PriceCalculator() {
+export default function FastCalculator() {
     const [selectedId, setSelectedId] = useState(METALS[0].id);
     const [amount, setAmount] = useState('');
 

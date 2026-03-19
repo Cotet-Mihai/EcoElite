@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import Link from "next/link";
 import {COMPANY} from "@/utils/data";
+import {Separator} from "@/components/ui/separator";
 
 const faqs = [
     {
@@ -42,21 +43,24 @@ const faqs = [
 
 export default function FAQSection() {
     return (
-        <section className="pt-24 px-6 lg:px-10 bg-transparent">
-            <div className="max-w-4xl mx-auto">
+        <section className="pt-24 px-6 lg:px-10 bg-transparent ">
+            <div className="max-w-4xl mx-auto  backdrop-blur-xl  p-10 rounded-4xl overflow-hidden bg-[#f9fafb]/40">
+                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
                 {/* Header - Rămâne identic */}
-                <div className="text-center mb-20 space-y-4">
-          <span className="text-primary uppercase tracking-[0.3em] font-black text-[10px]">
+                <div className="text-center space-y-4 mb-10">
+          <span className="text-primary uppercase tracking-[0.3em] font-black text-[10px] ">
             Suport & Info
           </span>
-                    <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground">
+                    <h2 className="font-serif text-4xl lg:text-5xl font-bold text-secondary-foreground">
                         Întrebări <span className="italic text-primary">Frecvente</span>
                     </h2>
-                    <p className="text-muted-foreground max-w-lg mx-auto text-sm lg:text-base">
+                    <p className="text-foreground max-w-lg mx-auto text-sm lg:text-base">
                         Tot ce trebuie să știi despre procesul de reciclare, prețuri și logistica {COMPANY.name}.
                     </p>
                 </div>
+
+                <Separator className={'bg-secondary-foreground/10 mb-10'}/>
 
                 {/* Accordion cu Săgeata Standard Shadcn */}
                 <Accordion type="single" collapsible className="w-full">
@@ -71,7 +75,7 @@ export default function FAQSection() {
                                     <span className="font-sans text-[10px] font-black text-primary/40 group-data-[state=open]:text-primary transition-colors pt-1">
                                         {faq.index}
                                     </span>
-                                    <span className="font-serif text-lg lg:text-2xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
+                                    <span className="font-serif text-lg lg:text-2xl font-bold text-secondary-foreground leading-tight group-hover:text-primary transition-colors">
                                         {faq.question}
                                     </span>
                                 </div>
@@ -88,7 +92,7 @@ export default function FAQSection() {
 
                 {/* Buton Contact Final */}
                 <div className="mt-20 flex justify-center">
-                    <button className="group flex items-center gap-4 py-3 px-8 rounded-full border border-border hover:border-primary transition-all duration-300">
+                    <button className="group flex items-center gap-4 py-3 px-8 rounded-full border border-foreground hover:border-primary transition-all duration-300">
                     <Link href={'/contact'} className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary-foreground">
                       Încă ai nelămuriri? Contactează-ne
                     </Link>

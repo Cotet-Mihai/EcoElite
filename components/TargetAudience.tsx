@@ -10,9 +10,9 @@ export default function TargetAudience() {
             <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
 
                 {/* Header */}
-                <div className="flex flex-col md:flex-row justify-between items-start mb-12 shrink-0">
+                <div className="bg-[#f3f3f5] flex flex-col md:flex-row justify-between items-start mb-12 shrink-0 p-10 rounded-4xl">
                     <div>
-                        <h2 className="font-serif text-6xl lg:text-5xl font-bold tracking-tight">
+                        <h2 className="font-serif text-primary text-6xl lg:text-5xl font-bold tracking-tight">
                             Cui ne adresăm?
                         </h2>
                         <p className="text-muted-foreground mt-3 max-w-2xl">
@@ -42,7 +42,7 @@ export default function TargetAudience() {
                         <div className="absolute inset-0 bg-gray-400/10" />
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-3xl font-semibold uppercase font-serif text-foreground">
+                                <h3 className="text-3xl font-semibold uppercase font-serif text-secondary">
                                     PRODUCĂTORI
                                 </h3>
                                 <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ export default function TargetAudience() {
                         <div className="absolute inset-0 bg-gray-400/10" />
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-3xl font-semibold uppercase  font-serif text-foreground">
+                                <h3 className="text-3xl font-semibold uppercase  font-serif text-secondary">
                                     DISTRIBUITORI
                                 </h3>
                                 <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -86,7 +86,7 @@ export default function TargetAudience() {
                         <div className="absolute inset-0 bg-gray-400/10" />
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div>
-                                <h3 className="text-3xl font-semibold uppercase  font-serif text-foreground">
+                                <h3 className="text-3xl font-semibold uppercase  font-serif text-secondary">
                                     PERSOANE FIZICE
                                 </h3>
                                 <p className="mt-3 text-sm text-muted-foreground">

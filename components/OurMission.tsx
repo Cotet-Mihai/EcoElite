@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function MissionSection() {
     return (
         <section className="py-12 px-6 lg:px-10">
-            <div className="max-w-7xl mx-auto bg-foreground rounded-[3rem] overflow-hidden relative">
+            <div className="max-w-7xl mx-auto backdrop-blur-xl rounded-[3rem] overflow-hidden relative bg-[#f9fafb]/40">
 
                 <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
@@ -38,15 +38,15 @@ export default function MissionSection() {
                     <div className="text-white space-y-6">
                         <div className="space-y-3">
                             {/* Folosim text-primary pentru coerență cu restul butoanelor/accentelor din site */}
-                            <span className="text-secondary uppercase tracking-[0.3em] font-black text-xs">
+                            <span className="text-primary uppercase tracking-[0.3em] font-black text-xs">
                                 Cine suntem noi
                             </span>
-                            <h2 className="font-serif text-4xl lg:text-5xl font-black leading-tight text-primary">
+                            <h2 className="font-serif text-4xl lg:text-5xl font-black leading-tight text-secondary">
                                 Misiunea noastră pentru viitor.
                             </h2>
                         </div>
 
-                        <p className="text-secondary font-bold leading-relaxed max-w-xl text-lg">
+                        <p className="text-secondary-foreground font-medium leading-relaxed max-w-xl text-lg">
                             Nu ne limităm doar la colectarea deșeurilor. Obiectivul nostru este să transformăm
                             fiecare gram de metal într-o resursă nouă, reducând amprenta de carbon.
                         </p>
@@ -54,11 +54,11 @@ export default function MissionSection() {
                         <div className="flex flex-col sm:flex-row gap-4 pt-2">
                             <Button
                                 variant='outline'
-                                className="h-12 rounded-full text-primary hover:bg-secondary-foreground hover:text-secondary border-none font-bold group text-sm hover:scale-102 transition-transform"
+                                className="h-12 rounded-full text-primary hover:bg-primary hover:text-primary-foreground border-none font-bold group text-sm hover:scale-102 transition-transform"
                             >
                                 <Link href={'/despre-noi'} className={'flex justify-center items-center w-full h-full  px-8'}>
                                     Află Mai Mult
-                                    <ArrowUpRight className="ml-2 w-4 h-4 group-hover:rotate-45 transition-transform text-primary" />
+                                    <ArrowUpRight className="ml-2 w-4 h-4 group-hover:rotate-45 transition-transform" />
                                 </Link>
                             </Button>
                         </div>

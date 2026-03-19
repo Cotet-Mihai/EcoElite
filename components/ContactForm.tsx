@@ -14,8 +14,9 @@ const contact = [
 
 export default function ContactForm() {
     return (
-        <section className="pt-24 px-6 lg:px-10 bg-transparent">
+        <section className="pt-24 px-6 lg:px-10 backdrop-blur-xl m-20 p-10 rounded-4xl overflow-hidden bg-[#f9fafb]/40">
             <div className="max-w-7xl mx-auto">
+                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
@@ -23,11 +24,11 @@ export default function ContactForm() {
                     {/* Coloana 1: Detalii (Col 4) */}
                     <div className="lg:col-span-4 space-y-16 mt-10">
                         <div className="space-y-6">
-                            <h2 className="font-serif text-5xl lg:text-4xl font-bold text-foreground">
+                            <h2 className="font-serif text-5xl lg:text-4xl font-bold text-secondary-foreground">
                                 Spune-ne cu ce <br />
                                 <span className="italic text-primary">te ajutăm.</span>
                             </h2>
-                            <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
+                            <p className="text-foreground text-sm leading-relaxed max-w-md">
                                 Suntem aici pentru a transforma procesul de reciclare într-o experiență simplă.
                             </p>
                         </div>
@@ -39,10 +40,10 @@ export default function ContactForm() {
                                         <item.icon size={18} strokeWidth={2.5} />
                                     </div>
                                     <div className="space-y-1">
-                                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/30 italic">
+                                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 italic">
                                             {item.label}
                                         </p>
-                                        <p className=" text-xl font-bold text-foreground tracking-tight">
+                                        <p className=" text-xl font-bold text-secondary-foreground tracking-tight">
                                             {item.val}
                                         </p>
                                     </div>

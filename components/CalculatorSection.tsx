@@ -1,9 +1,9 @@
 import { Card } from "@/components/ui/card";
-import PriceCalculator from "@/components/PriceCalculator";
+import FastCalculator from "@/components/FastCalculator";
 import {METALS} from "@/utils/data";
 import StatsRibbon from "@/components/StatsRibbon";
 
-export default function Calculator() {
+export default function CalculatorSection() {
 
     return (
         <section className="flex flex-col bg-transparent min-h-screen">
@@ -11,9 +11,9 @@ export default function Calculator() {
 
             <div className="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-10 py-12 flex flex-col">
                 {/* Header similar cu TargetAudience */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12 shrink-0">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 shrink-0 bg-[#f9fafb] p-10 rounded-4xl">
                     <div>
-                        <h2 className="font-serif text-5xl font-bold tracking-tight">
+                        <h2 className="font-serif text-5xl font-bold tracking-tight text-primary">
                             Prețuri colectare
                         </h2>
                         <p className="text-muted-foreground mt-3">
@@ -29,7 +29,7 @@ export default function Calculator() {
                     {/* Div STÂNGA: Prețuri stilizate ca Bento Card */}
                     <Card className="rounded-3xl border-none bg-gray-50 p-8 flex flex-col justify-between overflow-hidden relative group">
                         <div className="relative z-10">
-                            <h3 className="text-2xl font-semibold uppercase mb-8 tracking-wider font-serif text-foreground">
+                            <h3 className="text-2xl font-semibold uppercase mb-8 tracking-wider font-serif text-secondary">
                                 Cotații actuale
                             </h3>
 
@@ -61,8 +61,8 @@ export default function Calculator() {
                         <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#6F8F6B]/5 rounded-full blur-3xl" />
                     </Card>
 
-                    <Card className="rounded-3xl border-none bg-gray-50 shadow-2xl shadow-gray-200/50 flex flex-col p-2 group overflow-hidden">
-                        <PriceCalculator />
+                    <Card className="rounded-3xl border-none bg-gray-50  flex flex-col p-2 group overflow-hidden">
+                        <FastCalculator />
                     </Card>
 
                 </div>
