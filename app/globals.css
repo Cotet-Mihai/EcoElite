@@ -135,13 +135,25 @@
         50% { transform: translateY(-10px); }
     }
 
+    .animate-float {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .animation-delay-1000 {
+        animation-delay: 1s;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-2500 {
+        animation-delay: 2.5s;
+    }
+
     @keyframes bounce-slow {
         0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
         50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
-    }
-
-    .animate-float {
-        animation: float 4s ease-in-out infinite;
     }
 
     .animate-bounce-slow {
