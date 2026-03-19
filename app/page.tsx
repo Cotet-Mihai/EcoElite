@@ -4,12 +4,10 @@ import Calculator from "@/components/Calculator";
 import MissionSection from "@/components/OurMission";
 import FAQSection from "@/components/FAQSection";
 import ContactForm from "@/components/ContactForm";
-import OrganicGrowthBackground from "@/components/SubtleElectricFlow";
 
 export default function Home() {
   return (
       <main>
-          <OrganicGrowthBackground/>
           <HeroSection/>
           <TargetAudience/>
           <Calculator/>

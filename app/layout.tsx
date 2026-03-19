@@ -4,6 +4,8 @@ import "./globals.css";
 import {Header} from "@/components/Header";
 import React from "react";
 import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import GroundedNatureBackground from "@/NatureHarmoniousBackground";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -26,6 +28,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <html lang="ro">
             <body className={`${montserrat.className} antialiased`}>
                 <Header/>
+                <GroundedNatureBackground/>
                 {children}
                 <Footer/>
             </body>

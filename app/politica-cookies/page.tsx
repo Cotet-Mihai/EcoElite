@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { ChevronRight, Cookie, ShieldCheck, Info, Settings } from "lucide-react";
+import { ChevronRight, Cookie, ShieldCheck, Info } from "lucide-react";
 import {COMPANY} from "@/utils/data";
 
 export default function CookiePolicy() {
-    const currentYear = new Date().getFullYear();
 
     return (
-        <section className="py-24 px-6 lg:px-10 bg-white min-h-screen">
+        <section className="py-24 px-6 lg:px-10 bg-transparent min-h-screen">
             <div className="max-w-4xl mx-auto">
 
                 <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0  hidden lg:block">

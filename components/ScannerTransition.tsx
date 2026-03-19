@@ -19,6 +19,9 @@ export default function ScannerTransition() {
         let animationFrameId: number;
         const GRID_SIZE = 35;
 
+        // CULOAREA TA: #5ea500 în format RGB -> 94, 165, 0
+        const BRAND_RGB = "94, 165, 0";
+
         const resize = () => {
             if (canvas) {
                 canvas.width = window.innerWidth;
@@ -31,7 +34,6 @@ export default function ScannerTransition() {
             const rect = container.getBoundingClientRect();
             const viewHeight = window.innerHeight;
 
-            // Calculăm progresul în funcție de poziția față de viewport
             let progress = (viewHeight - rect.top) / (viewHeight + rect.height);
             progress = Math.max(0, Math.min(1, progress));
             scrollProgress.current = progress;
@@ -69,16 +71,20 @@ export default function ScannerTransition() {
 
                     ctx.beginPath();
                     ctx.arc(x, y, dotSize, 0, Math.PI * 2);
-                    ctx.fillStyle = isPrimary ? `rgba(34, 197, 94, ${opacity})` : `rgba(0, 0, 0, ${opacity})`;
+
+                    // MODIFICARE AICI: Folosim BRAND_RGB pentru bilele active
+                    ctx.fillStyle = isPrimary
+                        ? `rgba(${BRAND_RGB}, ${opacity})`
+                        : `rgba(0, 0, 0, ${opacity})`;
                     ctx.fill();
                 }
             }
 
-            // Linia de scanare
+            // Linia de scanare - actualizată să fie o variantă a culorii tale
             ctx.beginPath();
             ctx.moveTo(0, scannerY);
             ctx.lineTo(canvas.width, scannerY);
-            ctx.strokeStyle = "rgba(40, 64, 46, 0.5)"
+            ctx.strokeStyle = `rgba(${BRAND_RGB}, 0.3)`; // Linie subtilă din brand color
             ctx.lineWidth = 1;
             ctx.stroke();
 
@@ -102,13 +108,11 @@ export default function ScannerTransition() {
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-[400px] bg-white flex items-center justify-center overflow-hidden border-y border-black/5"
+            className="relative w-full h-[400px] bg-white/50 backdrop-blur-sm flex items-center justify-center overflow-hidden border-y border-black/5 rounded-4xl"
         >
-            {/* CANVAS cu FADE LATERAL via MASK-IMAGE */}
             <div
                 className="absolute inset-0 z-0"
                 style={{
-                    // Aceasta este magia pentru fade: transparent la margini, negru (opac) la mijloc
                     WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
                     maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
                 }}
@@ -116,25 +120,21 @@ export default function ScannerTransition() {
                 <canvas ref={canvasRef} className="w-full h-full" />
             </div>
 
-            {/* Content central */}
             <div className="relative z-10 flex flex-col items-center pointer-events-none text-center px-6">
-                <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-primary" />
+                {/* Linia decorativă de sus - folosim culoarea brand prin clasă Tailwind dacă e definită, sau style */}
+                <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-[#5ea500]" />
 
-                <div className="my-10 bg-[#4acf7b]/5 backdrop-blur-xs px-7 py-2 rounded-3xl">
+                <div className="my-10 bg-[#5ea500]/5 backdrop-blur-xs px-7 py-2 rounded-3xl">
                     <span className="text-[12px] uppercase tracking-[0.8em] font-black text-foreground/40 block mb-3">
                         SISTEM ACTIV
                     </span>
                     <h3 className="font-serif text-3xl md:text-5xl text-foreground font-bold tracking-tighter">
-                        Precizie în <span className="italic text-primary">SORTARE</span>
+                        Precizie în <span className="italic text-[#5ea500]">SORTARE</span>
                     </h3>
                 </div>
 
-                <div className="w-[1px] h-20 bg-gradient-to-t from-transparent to-primary" />
+                <div className="w-[1px] h-20 bg-gradient-to-t from-transparent to-[#5ea500]" />
             </div>
-
-            {/* Overlay-uri de siguranță pentru fade (opțional, pentru browsere vechi) */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-[1] pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-[1] pointer-events-none" />
         </div>
     );
 }

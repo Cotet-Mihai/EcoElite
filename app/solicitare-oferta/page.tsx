@@ -86,7 +86,7 @@ export default function SolicitareOfertaPage() {
     };
 
     return (
-        <main className="min-h-screen bg-background pt-32 pb-20 px-6 lg:px-10">
+        <main className="min-h-screen bg-transparent pt-32 pb-20 px-6 lg:px-10">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}

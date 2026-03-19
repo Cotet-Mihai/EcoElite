@@ -16,7 +16,7 @@ export default function StructuralTransition() {
     }, []);
 
     return (
-        <div className="relative w-full h-[500px] bg-white flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-[500px] bg-white/40 backdrop-blur-xl flex items-center justify-center overflow-hidden rounded-4xl ">
             {/* Grid-ul de fundal tip planșă tehnică */}
             <div className="absolute inset-0 opacity-[0.03]"
                  style={{ backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`,

@@ -9,7 +9,7 @@ import StructuralTransition from "@/components/StructuralTransition";
 
 export default function AboutPage() {
     return (
-        <section className="bg-white min-h-screen text-[#0D1611] overflow-hidden max-w-7xl mx-auto">
+        <section className="bg-transparent min-h-screen text-[#0D1611] overflow-hidden max-w-7xl mx-auto">
 
             <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0 hidden lg:block">
                 <h1 className="font-serif text-[22vw] font-black text-foreground/[0.03] leading-none uppercase tracking-tighter">
@@ -152,7 +152,7 @@ export default function AboutPage() {
             </div>
 
             {/* 5. CE COLECTĂM - Hover Cards cu Placeholders */}
-            <div className="bg-white text-[#0D1611] py-32 px-6 lg:px-10 relative z-10">
+            <div className="bg-transparent text-[#0D1611] py-32 px-6 lg:px-10 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-20 flex flex-col md:flex-row justify-between items-end gap-8">
                         <div>
