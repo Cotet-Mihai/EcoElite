@@ -1,5 +1,5 @@
 import HeroSection from "@/components/HeroSection";
-import TargetAudience from "@/components/TargetAudience";
+import TargetAudience from "@/components/TargetAudienceSection";
 import CalculatorSection from "@/components/CalculatorSection";
 import MissionSection from "@/components/OurMission";
 import FAQSection from "@/components/FAQSection";

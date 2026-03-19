@@ -5,7 +5,7 @@ import {Card} from "@/components/ui/card";
 
 export default function TargetAudienceSection() {
     return (
-        <section className={'flex flex-col py-24 px-10 w-full max-w-7xl mx-auto h-screen'}>
+        <section className={'flex flex-col py-24 px-10 w-full max-w-7xl mx-auto min-h-screen'}>
             {/* Header */}
             <div className={'flex flex-col sm:flex-row md:items-end justify-between items-center w-full gap-6'}>
                 <div className={'flex flex-col gap-2 max-w-2xl'}>
@@ -36,7 +36,7 @@ export default function TargetAudienceSection() {
                 {/* Card 1 */}
                 <Card className={'relative lg:row-span-2 overflow-hidden rounded-3xl group h-100 lg:h-full'}>
                     <Image
-                        src={'/images/phone-2.png'}
+                        src={'/images/phone.png'}
                         alt={'Secțiune despre producatori'}
                         fill
                         className={'object-cover object-[50%_60%] group-hover:scale-105 transition duration-500'}
@@ -56,7 +56,7 @@ export default function TargetAudienceSection() {
                 {/* Card 2 */}
                 <Card className={'relative lg:row-span-2 overflow-hidden rounded-3xl group h-100 lg:h-full'}>
                     <Image
-                        src={'/images/all-2.png'}
+                        src={'/images/all.png'}
                         alt={'Secțiune despre distribuitori'}
                         fill
                         className={'object-cover object-[50%_60%] group-hover:scale-105 transition duration-500'}
