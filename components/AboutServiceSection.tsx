@@ -23,7 +23,7 @@ export default function AboutServiceSection() {
                 {/* 2. Roadmap Area */}
                 <div className="reveal-on-scroll">
                     <div className="flex items-center gap-4 mb-8 opacity-40">
-                        <span className="text-[9px] font-black tracking-[0.5em] uppercase whitespace-nowrap">Procedură Standard de Trasabilitate</span>
+                        <span className="text-[7px] md:text-[9px] font-black tracking-[0.5em] uppercase whitespace-nowrap">Procedură Standard de Trasabilitate</span>
                         <div className="h-[1px] w-full bg-gradient-to-r from-primary-foreground/30 to-transparent" />
                     </div>
 
