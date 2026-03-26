@@ -23,7 +23,7 @@ export default function HomeWhyRecycleSection() {
                                     Protejarea Naturii
                                 </h3>
                                 <p className="text-muted-foreground text-sm mt-0.5 leading-snug">
-                                    Cresterea biodiversitatii pe zone si arii protejate.
+                                    Creșterea biodiversității în zonele și ariile protejate.
                                 </p>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ export default function HomeWhyRecycleSection() {
                                     Reducerea Poluării
                                 </h3>
                                 <p className="text-muted-foreground text-sm mt-0.5 leading-snug">
-                                    Scaderea in mod dramatic a emisiilor poluante.
+                                    Scăderea în mod dramatic a emisiilor poluante.
                                 </p>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ export default function HomeWhyRecycleSection() {
                                     Economie de Resurse
                                 </h3>
                                 <p className="text-muted-foreground text-sm mt-0.5 leading-snug">
-                                    Protejarea si productia pentru o viata echilibrata.
+                                    Protejarea resurselor și producția sustenabilă pentru o viață echilibrată.
                                 </p>
                             </div>
                         </div>
