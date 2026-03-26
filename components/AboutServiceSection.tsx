@@ -132,7 +132,7 @@ export default function AboutServiceSection() {
                             <div className="h-[1px] w-8 bg-primary-foreground" />
                             <span className="uppercase tracking-[0.4em] font-black text-[10px]">Parteneriate Strategice</span>
                         </div>
-                        <h2 className="font-serif text-4xl md:text-6xl font-light leading-[1.1] text-foreground">
+                        <h2 className="font-serif text-3xl md:text-6xl font-light leading-[1.1] text-foreground">
                             De la responsabilitatea producătorului la gospodării. Oferim <span className="font-bold italic text-secondary-foreground underline decoration-primary-foreground/20 underline-offset-8">soluții adaptate</span> pentru întreg lanțul valoric.
                         </h2>
                     </div>
@@ -173,8 +173,8 @@ export default function AboutServiceSection() {
 
                                 {/* Subtle numbering background on hover */}
                                 <span className="absolute -top-4 -right-2 text-6xl font-serif italic text-white/[0.02] group-hover:text-white/[0.05] transition-colors pointer-events-none">
-                                    0{i + 1}
-                                </span>
+                                0{i + 1}
+                            </span>
                             </div>
                         ))}
                     </div>

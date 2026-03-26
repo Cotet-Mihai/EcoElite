@@ -113,9 +113,25 @@ export function Header() {
 
                             <SheetFooter className="flex-col gap-4 pb-12 items-center relative z-10">
                                 <SheetClose asChild>
-                                    <Link href="/solicitare-oferta" className="w-full max-w-xs rounded-full h-14 font-bold text-base bg-primary border border-primary-foreground/30 text-primary-foreground flex items-center justify-center uppercase tracking-widest hover:bg-primary">
-                                        Solicită o ofertă
-                                    </Link>
+
+                                    <Dialog>
+                                        <DialogTrigger asChild>
+                                            <Button className="w-full max-w-xs rounded-full h-14 font-bold text-base bg-primary border border-primary-foreground/30 text-primary-foreground flex items-center justify-center uppercase tracking-widest hover:bg-primary">
+                                                Solicită o ofertă
+                                            </Button>
+                                        </DialogTrigger>
+
+                                        <DialogContent className="sm:max-w-3xl w-full p-0 bg-background/95 backdrop-blur-3xl border border-border/10 sm:rounded-[2rem] overflow-hidden shadow-2xl">
+
+                                            {/* Titluri ascunse pentru screen readere */}
+                                            <DialogHeader className="sr-only">
+                                                <DialogTitle>Conexiune Directă</DialogTitle>
+                                                <DialogDescription>Contactează-ne rapid sau folosește informațiile de mai jos.</DialogDescription>
+                                            </DialogHeader>
+
+                                            <ContactDialog/>
+                                        </DialogContent>
+                                    </Dialog>
                                 </SheetClose>
                                 <p className="text-[10px] uppercase font-black tracking-widest text-muted-foreground mt-6">
                                     Suport telefonic:{" "}

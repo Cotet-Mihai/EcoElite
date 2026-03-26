@@ -122,7 +122,12 @@ export default function Footer() {
                                     <MapPin size={16} />
                                 </div>
                                 <span className="group-hover:text-foreground transition-colors leading-snug">
-                                    {COMPANY.address}
+                                    <a
+                                        href="https://maps.google.com"
+                                        target={'_blank'}
+                                    >
+                                {COMPANY.address}
+                            </a>
                                 </span>
                             </li>
                         </ul>
