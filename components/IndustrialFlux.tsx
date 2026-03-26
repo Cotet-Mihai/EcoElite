@@ -27,10 +27,14 @@ export default function IndustrialFlux() {
             vy: number;
             size: number;
             color: string;
+            // 1. Adăugăm referința canvas-ului ca proprietate a clasei
+            canvasRef: HTMLCanvasElement;
 
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
+            // 2. Cerem canvas-ul în constructor
+            constructor(canvasElement: HTMLCanvasElement) {
+                this.canvasRef = canvasElement;
+                this.x = Math.random() * this.canvasRef.width;
+                this.y = Math.random() * this.canvasRef.height;
                 // Mișcare lentă pentru un look premium
                 this.vx = (Math.random() - 0.5) * 0.1;
                 this.vy = (Math.random() - 0.5) * 0.1;
@@ -43,8 +47,9 @@ export default function IndustrialFlux() {
                 this.x += this.vx;
                 this.y += this.vy;
 
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                // 3. Folosim this.canvasRef aici
+                if (this.x < 0 || this.x > this.canvasRef.width) this.vx *= -1;
+                if (this.y < 0 || this.y > this.canvasRef.height) this.vy *= -1;
             }
 
             draw() {
@@ -69,7 +74,8 @@ export default function IndustrialFlux() {
 
         const init = () => {
             particles = [];
-            for (let i = 0; i < 50; i++) particles.push(new Particle());
+            // 4. Pasăm canvas-ul către fiecare particulă nouă
+            for (let i = 0; i < 50; i++) particles.push(new Particle(canvas));
         };
 
         const drawLines = () => {
@@ -117,7 +123,6 @@ export default function IndustrialFlux() {
     }, []);
 
     return (
-        // Fundalul div-ului principal este setat la bg-transparent
         <div className="relative w-full h-[400px] bg-transparent flex items-center justify-center overflow-hidden">
             <canvas
                 ref={canvasRef}
@@ -125,7 +130,6 @@ export default function IndustrialFlux() {
             />
 
             <div className="relative z-10 flex flex-col items-center">
-                {/* Accent vertical Primary (Verde) */}
                 <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-foreground to-transparent" />
 
                 <div className="my-10 text-center px-6">
