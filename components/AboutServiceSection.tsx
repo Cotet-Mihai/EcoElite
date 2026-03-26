@@ -139,18 +139,42 @@ export default function AboutServiceSection() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
                         {[
-                            { icon: <Factory size={24}/>, title: "01. Producători", desc: "Susținem companiile în îndeplinirea obligațiilor legale de mediu (OIREP/Producător Individual), asigurând atingerea țintelor de reciclare prin rapoarte de trasabilitate impecabile." },
-                            { icon: <Store size={24}/>, title: "02. Retail & Distribution", desc: "Dezvoltăm puncte de colectare în rețelele de retail și gestionăm logistica pentru campaniile de tip buy-back, transformând obligația legală într-un avantaj de imagine pentru brand." },
-                            { icon: <User size={24}/>, title: "03. Sector Casnic", desc: "Punem la dispoziția persoanelor fizice puncte de acces sigure și sigure pentru eliminarea echipamentelor uzate, prevenind poluarea cu substanțe toxice din baterii și condensatori." }
+                            {
+                                icon: <Factory size={24}/>,
+                                title: "01. Producători (OIREP)",
+                                desc: "Preluăm responsabilitatea legală de mediu pentru producătorii de echipamente electrice. Asigurăm atingerea țintelor de colectare prin fluxuri documentate și raportări lunare impecabile către autorități, garantând conformitatea totală cu normele europene în vigoare."
+                            },
+                            {
+                                icon: <Store size={24}/>,
+                                title: "02. Distribuitori & Retail",
+                                desc: "Gestionăm infrastructura de colectare pentru lanțurile de magazine și distribuitori de electronice. Implementăm sisteme eficiente pentru campanii de tip buy-back și debarasarea stocurilor defecte, oferind logistică rapidă și certificate de distrugere securizată."
+                            },
+                            {
+                                icon: <User size={24}/>,
+                                title: "03. Persoane Fizice",
+                                desc: "Oferim cetățenilor soluții simple și legale pentru predarea aparatelor electrocasnice uzate. Prin punctele noastre de colectare, ne asigurăm că bateriile, condensatorii și substanțele periculoase din echipamentele casnice nu ajung în natură, ci sunt procesate ecologic."
+                            }
                         ].map((item, i) => (
                             <div key={i} className="space-y-6 relative group">
-                                <div className="text-primary-foreground bg-primary-foreground/5 w-14 h-14 rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:border-primary-foreground/50 transition-all duration-500">
+                                {/* Icon Container */}
+                                <div className="text-primary-foreground bg-primary-foreground/5 w-14 h-14 rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:border-primary-foreground/50 transition-all duration-500 shadow-xl">
                                     {item.icon}
                                 </div>
-                                <h4 className="text-secondary-foreground uppercase text-[11px] font-black tracking-widest border-b border-white/5 pb-4 group-hover:border-primary-foreground/30 transition-all">{item.title}</h4>
-                                <p className="text-muted-foreground text-sm lg:text-[15px] leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+
+                                {/* Title with decorative line */}
+                                <h4 className="text-secondary-foreground uppercase text-[11px] font-black tracking-widest border-b border-white/5 pb-4 group-hover:border-primary-foreground/30 transition-all duration-500 italic">
+                                    {item.title}
+                                </h4>
+
+                                {/* Description */}
+                                <p className="text-muted-foreground text-sm lg:text-[15px] leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                                     {item.desc}
                                 </p>
+
+                                {/* Subtle numbering background on hover */}
+                                <span className="absolute -top-4 -right-2 text-6xl font-serif italic text-white/[0.02] group-hover:text-white/[0.05] transition-colors pointer-events-none">
+                                    0{i + 1}
+                                </span>
                             </div>
                         ))}
                     </div>

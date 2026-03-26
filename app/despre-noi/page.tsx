@@ -10,10 +10,15 @@ import AboutServiceSection from "@/components/AboutServiceSection";
 export default function AboutPage() {
     return (
         /* Containerul de siguranță: ocupă tot ecranul și TAIE tot ce iese în lateral */
-        <main className=" w-full overflow-x-hidden bg-transparent min-h-screen text-secondary-foreground">
+        <main className=" w-full overflow-x-hidden bg-transparent min-h-screen text-secondary-foreground mt-10">
 
-            {/* DecorativeText trebuie să fie relativ la ecran sau la un container full-width */}
-            <DecorativeText text={'despre'}/>
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-0 right-0 -translate-y-10 translate-x-1/3 hero-image-reveal">
+                    <h1 className="font-serif text-[22vw] font-black text-white/[0.02] leading-none uppercase tracking-tighter whitespace-nowrap">
+                        Despre
+                    </h1>
+                </div>
+            </div>
 
             {/* Containerul de conținut: centrează totul la 1280px */}
             <div className="relative max-w-7xl mx-auto px-4 md:px-0">
