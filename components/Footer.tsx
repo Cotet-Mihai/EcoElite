@@ -1,122 +1,165 @@
 import Link from "next/link";
-import {Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Recycle} from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Recycle } from "lucide-react";
 import Image from "next/image";
-import {COMPANY} from "@/utils/data";
+import { COMPANY } from "@/utils/data";
 
 export default function Footer() {
-
     return (
-        <footer className="bg-transparent pt-12">
-            {/* Container principal cu fundalul Obsidian pentru a face legătura cu secțiunea Mission */}
-            <div className="max-w-7xl mx-auto bg-secondary-foreground rounded-t-[3rem] px-8 pt-16 pb-8 text-white relative overflow-hidden">
+        <footer className="relative w-full pt-12 overflow-hidden">
+            {/* --- FUNDALUL FOOTER-ULUI (Full width, Industrial Grunge Match) --- */}
+            <div className="absolute inset-0 bg-[#02080a] border-t border-white/5">
 
-                {/* Decor subtil de fundal */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full" />
+                {/* 1. Predominantul: Albastru-Verzui (Petrol) - Baza asimetrică */}
+                <div
+                    className="absolute inset-0 opacity-100"
+                    style={{
+                        background: `radial-gradient(circle at 20% 100%, #0a2429 0%, #02080a 100%)`
+                    }}
+                />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+                {/* 2. Detaliul Galben Subtil (Ocre/Amber) - Asimetric spre dreapta jos */}
+                <div
+                    className="absolute bottom-[-50px] left-[75%] -translate-x-1/2 w-[80%] h-[200px] opacity-25 blur-[80px]"
+                    style={{
+                        background: 'radial-gradient(ellipse at center, #7d5a32 0%, #4a341d 50%, transparent 100%)'
+                    }}
+                />
 
-                    {/* Coloana 1: Branding & Slogan */}
-                    <div className="space-y-6">
+                {/* 3. Textura ta principală (texture.jpg) */}
+                <div
+                    className="absolute inset-0 opacity-30 mix-blend-multiply"
+                    style={{
+                        backgroundImage: `url('/texture.jpg')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'bottom center',
+                        filter: 'contrast(1.1) brightness(0.8)'
+                    }}
+                />
+
+                {/* 4. Stratul de NOISE ORGANIC (Turbulență pentru aspectul pătat) */}
+                <div className="absolute inset-0 opacity-[0.2] mix-blend-overlay">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <filter id="footerGrunge">
+                            <feTurbulence
+                                type="fractalNoise"
+                                baseFrequency="0.015"
+                                numOctaves="4"
+                                seed="88"
+                            />
+                            <feColorMatrix type="saturate" values="0" />
+                        </filter>
+                        <rect width="100%" height="100%" filter="url(#footerGrunge)" />
+                    </svg>
+                </div>
+            </div>
+
+            {/* Containerul de conținut (limitat la max-w-7xl pentru aliniere, dar fundalul e full) */}
+            <div className="max-w-7xl mx-auto px-8 lg:px-12 pt-16 pb-8 relative z-10 text-foreground">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+
+                    {/* Coloana 1: Branding & Social */}
+                    <div className="space-y-8">
                         <div className="flex items-center gap-2">
-                            <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2 group">
-                                <Recycle className="h-8 w-8 text-primary transition-transform duration-500 group-hover:rotate-180" />
-                                <span className="font-serif text-2xl font-bold tracking-tighter italic text-white">
-                                    Eco<span className="text-primary">Elite</span>
+                            <Link href="/" className="flex items-center gap-2 group">
+                                <Recycle className="h-8 w-8 text-primary-foreground transition-transform duration-700 group-hover:rotate-180 drop-shadow-[0_0_8px_rgba(126,198,54,0.3)]" />
+                                <span className="font-serif text-2xl font-bold tracking-tighter italic text-foreground">
+                                    Eco<span className="text-primary-foreground">Elite</span>
                                 </span>
                             </Link>
                         </div>
-                        <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+                        <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
                             Transformăm deșeurile de astăzi în resursele de mâine prin soluții de reciclare inteligente și sustenabile.
                         </p>
                         <div className="flex gap-4">
-                            <Link href={COMPANY.instagram} className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
-                                <Instagram size={18} />
-                            </Link>
-                            <Link href={COMPANY.facebook} className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
-                                <Facebook size={18} />
-                            </Link>
-                            <Link href={COMPANY.linkedIn} className="p-2 rounded-full border border-white/10 hover:bg-primary hover:text-black transition-all">
-                                <Linkedin size={18} />
-                            </Link>
+                            {[
+                                { icon: Instagram, href: COMPANY.instagram },
+                                { icon: Facebook, href: COMPANY.facebook },
+                                { icon: Linkedin, href: COMPANY.linkedIn }
+                            ].map((social, idx) => (
+                                <Link
+                                    key={idx}
+                                    href={social.href}
+                                    className="p-3 rounded-xl border border-border/5 bg-foreground/[0.02] text-muted-foreground hover:bg-secondary-foreground hover:text-foreground hover:border-secondary-foreground transition-all duration-300"
+                                >
+                                    <social.icon size={18} />
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Coloana 2: Link-uri Rapide */}
+                    {/* Coloana 2: Navigație (Auriu/Ocru) */}
                     <div className="space-y-6">
-                        <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Navigație</h4>
-                        <ul className="space-y-4 text-sm text-white/70">
-                            <li><Link href="/" className="hover:text-primary transition-colors">Acasă</Link></li>
-                            <li><Link href="/despre-noi" className="hover:text-primary transition-colors">Despre Noi</Link></li>
-                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+                        <h4 className="font-bold uppercase tracking-[0.3em] text-[10px] text-secondary-foreground">Navigație</h4>
+                        <ul className="space-y-4 text-sm text-gray-400">
+                            <li><Link href="/" className="hover:text-foreground transition-colors flex items-center gap-2 group"><div className="w-1 h-1 bg-primary-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all"/> Acasă</Link></li>
+                            <li><Link href="/despre-noi" className="hover:text-foreground transition-colors flex items-center gap-2 group"><div className="w-1 h-1 bg-primary-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all"/> Despre Noi</Link></li>
+                            <li><Link href="/contact" className="hover:text-foreground transition-colors flex items-center gap-2 group"><div className="w-1 h-1 bg-primary-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all"/> Contact</Link></li>
                         </ul>
                     </div>
 
                     {/* Coloana 3: Contact */}
                     <div className="space-y-6">
-                        <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Contact</h4>
-                        <ul className="space-y-4 text-sm text-white/70">
-                            <li className="flex items-center gap-3">
-                                <Phone size={18} className="text-primary shrink-0" />
-                                <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`}>
+                        <h4 className="font-bold uppercase tracking-[0.3em] text-[10px] text-secondary-foreground">Contact Direct</h4>
+                        <ul className="space-y-5 text-sm text-gray-300 font-medium">
+                            <li className="flex items-center gap-4 group">
+                                <div className="p-2 rounded-lg bg-primary-foreground/10 text-primary-foreground">
+                                    <Phone size={16} />
+                                </div>
+                                <a href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="group-hover:text-foreground transition-colors">
                                     {COMPANY.phone}
                                 </a>
                             </li>
-                            <li className="flex items-center gap-3">
-                                <Mail size={18} className="text-primary shrink-0" />
-                                <a href={`mailto:${COMPANY.email}`}>
+                            <li className="flex items-center gap-4 group">
+                                <div className="p-2 rounded-lg bg-primary-foreground/10 text-primary-foreground">
+                                    <Mail size={16} />
+                                </div>
+                                <a href={`mailto:${COMPANY.email}`} className="group-hover:text-foreground transition-colors">
                                     {COMPANY.email}
                                 </a>
                             </li>
-                            <li className="flex items-start gap-3">
-                                <MapPin size={18} className="text-primary shrink-0" />
-                                <a href="https://www.google.com/maps/place/%C8%98oseaua+Andronache+254,+022529+Bucure%C8%99ti/@44.4809802,26.1593634,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1f85a6480795d:0x394ff62066cd7956!8m2!3d44.4809802!4d26.1619383!16s%2Fg%2F11qnvn_lz5?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D" target={'_blank'}>
+                            <li className="flex items-start gap-4 group">
+                                <div className="p-2 rounded-lg bg-primary-foreground/10 text-primary-foreground shrink-0 mt-1">
+                                    <MapPin size={16} />
+                                </div>
+                                <span className="group-hover:text-foreground transition-colors leading-snug">
                                     {COMPANY.address}
-                                </a>
+                                </span>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Coloana 4: ANPC - Direct din public/images/ */}
-                    <div className="space-y-4">
-                        <h4 className="font-bold uppercase tracking-widest text-xs text-primary">Utile</h4>
-                        <div className="flex flex-col gap-3">
-                            <Link
-                                href="https://anpc.ro/ce-este-sal/"
-                                target="_blank"
-                                className="transition-opacity hover:opacity-80"
-                            >
+                    {/* Coloana 4: Utile ANPC */}
+                    <div className="space-y-6">
+                        <h4 className="font-bold uppercase tracking-[0.3em] text-[10px] text-secondary-foreground">Legături Utile</h4>
+                        <div className="flex flex-col gap-4">
+                            <Link href="https://anpc.ro/ce-este-sal/" target="_blank" className="transition-all opacity-80 hover:opacity-100">
                                 <Image
                                     src="/images/anpc-sal.png"
                                     alt="ANPC SAL"
-                                    width={250}
-                                    height={70}
-                                    className="rounded-lg border border-white/10"
+                                    width={200}
+                                    height={60}
+                                    className="rounded-xl border border-foreground/5 bg-foreground/[0.02] p-1"
                                 />
                             </Link>
-                            <Link
-                                href="https://consumer-redress.ec.europa.eu/index_en"
-                                target="_blank"
-                                className="transition-opacity hover:opacity-80"
-                            >
+                            <Link href="https://consumer-redress.ec.europa.eu/index_en" target="_blank" className="transition-all opacity-80 hover:opacity-100">
                                 <Image
                                     src="/images/anpc-sol.png"
                                     alt="ANPC SOL"
-                                    width={250}
-                                    height={70}
-                                    className="rounded-lg border border-white/10"
+                                    width={200}
+                                    height={60}
+                                    className="rounded-xl border border-foreground/5 bg-foreground/[0.02] p-1"
                                 />
                             </Link>
                         </div>
                     </div>
-
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-white/30 text-[10px] uppercase tracking-widest">
-                        © 2026 {COMPANY.name} {COMPANY.legalForm} Toate drepturile rezervate.
+                <div className="mt-20 pt-8 border-t border-foreground/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-[0.2em]">
+                        © {new Date().getFullYear()} {COMPANY.name} {COMPANY.legalForm}
                     </p>
-                    <div className="flex gap-8 text-[10px] uppercase tracking-widest text-white/30">
+                    <div className="flex gap-8 text-[10px] uppercase tracking-widest text-muted-foreground">
                         <Link href="/termeni-si-conditii" className="hover:text-white transition-colors">Termeni și Condiții</Link>
                         <Link href="/politica-cookies" className="hover:text-white transition-colors">Politica Cookies</Link>
                     </div>

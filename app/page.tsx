@@ -1,23 +1,34 @@
-import HeroSection from "@/components/HeroSection";
-import TargetAudience from "@/components/TargetAudienceSection";
-import PricesSection from "@/components/PricesSection";
-import MissionSection from "@/components/OurMission";
-import FAQSection from "@/components/FAQSection";
+import HomeHeroSection from "@/components/HomeHeroSection";
+import HomeWhyRecycleSection from "@/components/HomeWhyRecycleSection";
+import HomeTargetAudienceSection from "@/components/HomeTargetAudienceSection";
+import HomeOurMissionSection from "@/components/HomeOurMissionSection";
+import HomeFAQSection from "@/components/HomeFAQSection";
 import ContactForm from "@/components/ContactForm";
-import StatsRibbon from "@/components/StatsRibbon";
 
 export default function Home() {
-  return (
-      <main>
-          <HeroSection/>
-          <TargetAudience/>
-          <StatsRibbon/>
-          <PricesSection/>
-          <MissionSection/>
-          <FAQSection/>
-          <div className={'mb-24'}>
-              <ContactForm/>
-          </div>
-      </main>
-  );
+    return (
+        <main className="overflow-x-hidden">
+            <HomeHeroSection />
+
+            <section className="reveal-on-scroll">
+                <HomeWhyRecycleSection />
+            </section>
+
+            <section className="reveal-on-scroll">
+                <HomeTargetAudienceSection />
+            </section>
+
+            <section className="reveal-on-scroll">
+                <HomeOurMissionSection />
+            </section>
+
+            <section className="reveal-on-scroll">
+                <HomeFAQSection />
+            </section>
+
+            <section className="reveal-on-scroll">
+                <ContactForm />
+            </section>
+        </main>
+    );
 }

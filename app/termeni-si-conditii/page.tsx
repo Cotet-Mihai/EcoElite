@@ -3,21 +3,20 @@ import { ChevronRight, Scale } from "lucide-react";
 import {COMPANY} from "@/utils/data";
 
 export default function TermsAndConditions() {
-    const currentYear = new Date().getFullYear();
 
     return (
-        <section className="py-24 px-6 lg:px-10 bg-transparent min-h-screen">
+        <section className="py-24 px-6 lg:px-10 min-h-screen">
             <div className="max-w-4xl mx-auto">
 
                 <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0  hidden lg:block">
-                    <h1 className="font-serif text-[22vw] font-black text-foreground/[0.03] leading-none uppercase tracking-tighter">
+                    <h1 className="font-serif text-[22vw] font-black text-foreground/[0.01] leading-none uppercase tracking-tighter">
                         Termeni.
                     </h1>
                 </div>
 
                 {/* Header Pagina */}
                 <div className="mb-20 space-y-6 border-b border-foreground/5 pb-12">
-                    <div className="flex items-center gap-3 text-primary">
+                    <div className="flex items-center gap-3 text-primary-foreground">
                         <Scale size={20} />
                         <span className="uppercase tracking-[0.4em] font-black text-[10px]">
                             Document Legal
@@ -25,7 +24,7 @@ export default function TermsAndConditions() {
                     </div>
                     <h1 className="font-serif text-5xl lg:text-7xl font-bold text-foreground leading-none tracking-tighter">
                         Termeni și
-                        <span className="italic text-primary"> Condiții.</span>
+                        <span className="italic text-secondary-foreground"> Condiții.</span>
                     </h1>
                 </div>
 
@@ -35,7 +34,7 @@ export default function TermsAndConditions() {
                     {/* 01. Identificarea Firmei */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-4">
-                            <span className="font-sans text-[10px] font-black text-primary">01</span>
+                            <span className="font-sans text-[10px] font-black text-primary-foreground">01</span>
                             <h3 className="font-serif text-2xl font-bold text-foreground">Identificarea Operatorului</h3>
                         </div>
                         <div className="pl-9 space-y-4">
@@ -51,7 +50,7 @@ export default function TermsAndConditions() {
                     {/* 02. Acceptarea și Modificarea Termenilor */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-4">
-                            <span className="font-sans text-[10px] font-black text-primary">02</span>
+                            <span className="font-sans text-[10px] font-black text-primary-foreground">02</span>
                             <h3 className="font-serif text-2xl font-bold text-foreground">Acceptarea și Modificarea Termenilor</h3>
                         </div>
                         <div className="pl-9 space-y-4">
@@ -60,7 +59,7 @@ export default function TermsAndConditions() {
                             </p>
 
                             {/* Box de atenționare stilizat */}
-                            <div className="bg-foreground/5 border-l-2 border-primary p-6 my-4">
+                            <div className="bg-foreground/5 border-l-2 border-border p-6 my-4">
                                 <p className="text-sm font-medium text-foreground">
                                     Dacă nu sunteți de acord cu oricare dintre prevederile prezentului document, aveți obligația de a înceta imediat utilizarea site-ului.
                                 </p>
@@ -78,7 +77,7 @@ export default function TermsAndConditions() {
                     {/* 03. Condiții de Utilizare și Obligațiile Utilizatorului */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-4">
-                            <span className="font-sans text-[10px] font-black text-primary">03</span>
+                            <span className="font-sans text-[10px] font-black text-primary-foreground">03</span>
                             <h3 className="font-serif text-2xl font-bold text-foreground">Condiții de Utilizare și Obligațiile Utilizatorului</h3>
                         </div>
                         <div className="pl-9 space-y-4">
@@ -91,7 +90,7 @@ export default function TermsAndConditions() {
                                     "Să nu utilizați sisteme automate (roboți/scrapers) pentru a extrage date sau cotații de preț fără acordul nostru scris."
                                 ].map((text, i) => (
                                     <li key={i} className="flex items-start gap-3">
-                                        <div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                        <div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary-foreground" />
                                         <span className="text-sm">{text}</span>
                                     </li>
                                 ))}
@@ -102,14 +101,14 @@ export default function TermsAndConditions() {
                     {/* 04. Servicii și Cotații */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-4">
-                            <span className="font-sans text-[10px] font-black text-primary">04</span>
+                            <span className="font-sans text-[10px] font-black text-primary-foreground">04</span>
                             <h3 className="font-serif text-2xl font-bold text-foreground">Servicii și Cotații de Preț</h3>
                         </div>
                         <div className="pl-9 space-y-4 text-sm lg:text-base">
                             <p>
                                 Informațiile și prețurile/cotațiile afișate pe site au caracter informativ. Prețul final pentru deșeurile colectate se stabilește la punctul de lucru, după cântărire și evaluarea purității materialului de către personalul nostru calificat.
                             </p>
-                            <ul className="list-disc pl-5 space-y-2 marker:text-primary">
+                            <ul className="list-disc pl-5 space-y-2 marker:text-primary-foreground">
                                 <li>Cotațiile se bazează pe bursa metalelor (LME) și pot varia zilnic.</li>
                                 <li>{COMPANY.name} {COMPANY.legalForm} își rezervă dreptul de a refuza deșeuri care nu respectă normele de siguranță sau mediu (ex: materiale explozive, recipiente sub presiune necurățate).</li>
                             </ul>
@@ -119,7 +118,7 @@ export default function TermsAndConditions() {
                     {/* 05. Proprietate Intelectuală */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-4">
-                            <span className="font-sans text-[10px] font-black text-primary">05</span>
+                            <span className="font-sans text-[10px] font-black text-primary-foreground">05</span>
                             <h3 className="font-serif text-2xl font-bold text-foreground">Proprietate Intelectuală</h3>
                         </div>
                         <div className="pl-9">
@@ -132,7 +131,7 @@ export default function TermsAndConditions() {
                     {/* 06. Limitarea Răspunderii */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-4">
-                            <span className="font-sans text-[10px] font-black text-primary">06</span>
+                            <span className="font-sans text-[10px] font-black text-primary-foreground">06</span>
                             <h3 className="font-serif text-2xl font-bold text-foreground">Limitarea Răspunderii</h3>
                         </div>
                         <div className="pl-9">
@@ -153,11 +152,11 @@ export default function TermsAndConditions() {
                     <Link href="/contact">
                         <button className="group flex items-center gap-4">
                             <div className="flex flex-col items-end">
-                                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-primary">Ai nelămuriri juridice?</span>
+                                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-primary-foreground">Ai nelămuriri juridice?</span>
                                 <span className="font-serif text-xl font-bold text-foreground">Contactează-ne</span>
                             </div>
-                            <div className="w-12 h-12 rounded-full bg-foreground flex items-center justify-center group-hover:bg-primary transition-all duration-500">
-                                <ChevronRight className="text-primary group-hover:text-foreground transition-colors" size={20} />
+                            <div className="w-12 h-12 rounded-full bg-secondary-foreground flex items-center justify-center group-hover:bg-primary-foreground transition-all duration-500">
+                                <ChevronRight className="text-primary group-hover:text-background transition-colors" size={20} />
                             </div>
                         </button>
                     </Link>

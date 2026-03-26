@@ -1,4 +1,4 @@
-export default function CompanyMap() {
+export default function ContactCompanyMap() {
     const mapLocation = "Bucuresti+Sector+2+Strada+Andronache+numarul+254";
     return (
         <div className="w-full h-full transition-all duration-700">
