@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { montserrat } from "@/utils/fonts";
 import Footer from "@/components/Footer";
 import BackgroundLayer from "@/components/BackgroundLayer";
+import { Analytics } from "@vercel/analytics/next";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
 
         <Footer />
+        <Analytics />
 
         {/* --- SCRIPTUL PENTRU ANIMAȚII (SEO SAFE) --- */}
         <script
