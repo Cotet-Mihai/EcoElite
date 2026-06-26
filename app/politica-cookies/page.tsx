@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight, Cookie, ShieldCheck, Info } from "lucide-react";
 import { COMPANY } from "@/utils/data";
+
+export const metadata: Metadata = {
+    title: "Politica Cookies | Eco Elite",
+    description: "Politica de utilizare a cookie-urilor pe site-ul Eco Elite S.R.L.",
+    robots: { index: false, follow: false },
+};
 
 export default function CookiePolicy() {
     return (
@@ -9,9 +16,9 @@ export default function CookiePolicy() {
 
                 {/* Fundal text gigant - Adaptat opacitatea la 0.01 ca în exemplul de Termeni */}
                 <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0 hidden lg:block">
-                    <h1 className="font-serif text-[22vw] font-black text-foreground/[0.01] leading-none uppercase tracking-tighter">
+                    <p className="font-serif text-[22vw] font-black text-foreground/[0.01] leading-none uppercase tracking-tighter">
                         cookies.
-                    </h1>
+                    </p>
                 </div>
 
                 {/* Header Pagina */}

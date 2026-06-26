@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight, Scale } from "lucide-react";
 import {COMPANY} from "@/utils/data";
+
+export const metadata: Metadata = {
+    title: "Termeni și Condiții | Eco Elite",
+    description: "Termenii și condițiile de utilizare ale site-ului Eco Elite S.R.L.",
+    robots: { index: false, follow: false },
+};
 
 export default function TermsAndConditions() {
 
@@ -9,9 +16,9 @@ export default function TermsAndConditions() {
             <div className="max-w-4xl mx-auto">
 
                 <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0  hidden lg:block">
-                    <h1 className="font-serif text-[22vw] font-black text-foreground/[0.01] leading-none uppercase tracking-tighter">
+                    <p className="font-serif text-[22vw] font-black text-foreground/[0.01] leading-none uppercase tracking-tighter">
                         Termeni.
-                    </h1>
+                    </p>
                 </div>
 
                 {/* Header Pagina */}
