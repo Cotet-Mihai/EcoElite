@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import { Phone, MapPin, Building2, Clock, CircleUser } from "lucide-react";
 import ContactCompanyMap from "@/components/ContactCompanyMap";
 import ContactForm from "@/components/ContactForm";
 import { COMPANY } from "@/utils/data";
 import IndustrialFlux from "@/components/IndustrialFlux";
+
+export const metadata: Metadata = {
+    title: "Contact & Program | Eco Elite",
+    description:
+        "Contactează Eco Elite S.R.L. pentru colectare deșeuri metalice în București. Program: Luni-Vineri 08-17, Sâmbătă 08-13. Tel: +40 784 079 513.",
+    alternates: {
+        canonical: "https://ecoelite.ro/contact",
+    },
+    openGraph: {
+        title: "Contact & Program | Eco Elite",
+        description:
+            "Tel: +40 784 079 513 · Str. Andronache 254, București · Luni-Vineri 08-17.",
+        url: "https://ecoelite.ro/contact",
+    },
+};
 
 export default function ContactPage() {
     return (
@@ -10,9 +26,9 @@ export default function ContactPage() {
 
             {/* Fundal text gigant - Animație subtilă de fade-in la load */}
             <div className="absolute top-0 right-0 -translate-y-5 translate-x-1/4 pointer-events-none select-none z-0 hero-image-reveal">
-                <h1 className="font-serif text-[22vw] font-black text-foreground/[0.01] leading-none uppercase tracking-tighter">
+                <p className="font-serif text-[22vw] font-black text-foreground/[0.01] leading-none uppercase tracking-tighter">
                     Contact
-                </h1>
+                </p>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
