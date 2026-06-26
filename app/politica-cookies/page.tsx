@@ -4,7 +4,7 @@ import { ChevronRight, Cookie, ShieldCheck, Info } from "lucide-react";
 import { COMPANY } from "@/utils/data";
 
 export const metadata: Metadata = {
-    title: "Politica Cookies | Eco Elite",
+    title: "Politica Cookies",
     description: "Politica de utilizare a cookie-urilor pe site-ul Eco Elite S.R.L.",
     robots: { index: false, follow: false },
 };

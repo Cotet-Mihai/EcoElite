@@ -7,7 +7,7 @@ import HomeFAQSection from "@/components/HomeFAQSection";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-    title: "Eco Elite | Colectare și Reciclare Deșeuri Metalice București",
+    title: { absolute: "Eco Elite | Colectare și Reciclare Deșeuri Metalice București" },
     description:
         "Eco Elite S.R.L. cumpără metale feroase și neferoase: fier vechi, cupru, aluminiu, inox, alamă, plumb. Prețuri zilnice actualizate. Colectare la domiciliu disponibilă în București.",
     alternates: {

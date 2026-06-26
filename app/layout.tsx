@@ -33,9 +33,6 @@ export const metadata: Metadata = {
         follow: true,
         googleBot: { index: true, follow: true },
     },
-    alternates: {
-        canonical: siteUrl,
-    },
     openGraph: {
         type: "website",
         locale: "ro_RO",
@@ -43,13 +40,13 @@ export const metadata: Metadata = {
         siteName: "Eco Elite",
         title: "Eco Elite | Colectare și Reciclare Deșeuri Metalice București",
         description:
-            "Servicii profesionale de colectare și reciclare deșeuri metalice în bucurești. Prețuri zilnice, transport inclus.",
+            "Servicii profesionale de colectare și reciclare deșeuri metalice în București. Prețuri zilnice, transport inclus.",
     },
     twitter: {
         card: "summary_large_image",
         title: "Eco Elite | Colectare și Reciclare Deșeuri Metalice",
         description:
-            "Servicii profesionale de colectare și reciclare deșeuri metalice în bucurești.",
+            "Servicii profesionale de colectare și reciclare deșeuri metalice în București.",
     },
 };
 
@@ -84,7 +81,7 @@ const jsonLd = {
     ],
     priceRange: "$$",
     description:
-        "Eco Elite S.R.L. oferă servicii profesionale de colectare și reciclare deșeuri metalice în bucurești.",
+        "Eco Elite S.R.L. oferă servicii profesionale de colectare și reciclare deșeuri metalice în București.",
 };
 
 export default function RootLayout({

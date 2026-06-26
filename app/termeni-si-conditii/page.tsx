@@ -4,7 +4,7 @@ import { ChevronRight, Scale } from "lucide-react";
 import {COMPANY} from "@/utils/data";
 
 export const metadata: Metadata = {
-    title: "Termeni și Condiții | Eco Elite",
+    title: "Termeni și Condiții",
     description: "Termenii și condițiile de utilizare ale site-ului Eco Elite S.R.L.",
     robots: { index: false, follow: false },
 };

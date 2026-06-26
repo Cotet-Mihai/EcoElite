@@ -9,7 +9,7 @@ import AboutValuesSection from "@/components/AboutValuesSection";
 import AboutServiceSection from "@/components/AboutServiceSection";
 
 export const metadata: Metadata = {
-    title: "Despre Noi | Eco Elite",
+    title: "Despre Noi",
     description:
         "Descoperă echipa Eco Elite S.R.L. — misiunea noastră de reciclare responsabilă, valorile care ne ghidează și serviciile de colectare deșeuri metalice din București.",
     alternates: {

@@ -6,7 +6,7 @@ import { COMPANY } from "@/utils/data";
 import IndustrialFlux from "@/components/IndustrialFlux";
 
 export const metadata: Metadata = {
-    title: "Contact & Program | Eco Elite",
+    title: "Contact & Program",
     description:
         "Contactează Eco Elite S.R.L. pentru colectare deșeuri metalice în București. Program: Luni-Vineri 08-17, Sâmbătă 08-13. Tel: +40 784 079 513.",
     alternates: {
