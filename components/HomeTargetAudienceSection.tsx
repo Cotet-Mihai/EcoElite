@@ -58,10 +58,10 @@ export default function HomeTargetAudienceSection() {
                 {/* Card 2 */}
                 <Card className={'relative lg:row-span-2 overflow-hidden rounded-3xl group border-none h-[400px] lg:h-full bg-transparent'}>
                     <Image
-                        src={'/images/texture.png'}
+                        src={'/images/distribuitori.png'}
                         alt={'Secțiune despre distribuitori'}
                         fill
-                        className={'object-cover object-[50%_60%] group-hover:scale-105 transition duration-700 opacity-60 group-hover:opacity-70'}
+                        className={'object-cover object-[50%_55%] group-hover:scale-105 transition duration-700 opacity-60 group-hover:opacity-70'}
                     />
                     <div className="absolute inset-0 " />
                     <div className={'absolute inset-0 flex flex-col items-center px-8 text-center'}>
@@ -78,10 +78,10 @@ export default function HomeTargetAudienceSection() {
                 {/* Card 3 */}
                 <Card className={'relative lg:row-span-1 overflow-hidden rounded-3xl group border-none h-[300px] lg:h-full bg-transparent'}>
                     <Image
-                        src={'/images/texture.png'}
+                        src={'/images/persoane-fizice.png'}
                         alt={'Secțiune despre persoane fizice'}
                         fill
-                        className={'object-cover object-[90%_80%]  group-hover:scale-105 transition duration-700 opacity-60 group-hover:opacity-70'}
+                        className={'object-cover object-[50%_60%] group-hover:scale-105 transition duration-700 opacity-60 group-hover:opacity-70'}
                     />
                     <div className="absolute inset-0 " />
                     <div className={'absolute inset-0 flex flex-col items-center px-8 text-center'}>
@@ -97,8 +97,8 @@ export default function HomeTargetAudienceSection() {
                 {/* Card 4 - Imagine decorativă */}
                 <Card className={'relative lg:row-span-1 overflow-hidden rounded-3xl group border-none h-[200px] lg:h-full bg-transparent'}>
                     <Image
-                        src={'/images/texture.png'}
-                        alt={'Imagine decorativă cu o plantă'}
+                        src={'/images/brand-mark.png'}
+                        alt={'Imagine decorativă cu simbolul EcoElite'}
                         fill
                         className={'object-cover opacity-80 group-hover:scale-110 transition duration-1000'}
                     />
