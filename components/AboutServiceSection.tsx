@@ -109,14 +109,14 @@ export default function AboutServiceSection() {
                     {/* Două Carduri Mici stivuite în dreapta */}
                     <div className="md:col-span-4 grid grid-cols-1 gap-6">
                         <div className="relative rounded-[3rem] overflow-hidden border border-white/5 bg-foreground/[0.02] p-10 flex flex-col justify-end group">
-                            <Image src="/images/colectare-selectiva.jpg" alt="Pubele pentru colectare selectivă pe fracții" fill className="object-cover object-center opacity-20 group-hover:opacity-40 transition-opacity" />
+                            <Image src="/images/colectare-selectiva.jpg" alt="Pubele pentru colectare selectivă pe fracții" fill className="object-cover object-center opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000" />
                             <div className="relative z-10">
                                 <h3 className="text-2xl font-serif font-bold mb-2">Colectare Selectivă</h3>
                                 <p className="text-xs text-muted-foreground">Management integrat pentru deșeuri comerciale.</p>
                             </div>
                         </div>
                         <div className="relative rounded-[3rem] overflow-hidden border border-white/5 bg-foreground/[0.02] p-10 flex flex-col justify-end group">
-                            <Image src="/images/metale-feroase.png" alt="Metale" fill className="object-cover opacity-20 group-hover:opacity-40 transition-opacity" />
+                            <Image src="/images/metale-feroase.png" alt="Metale" fill className="object-cover opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000" />
                             <div className="relative z-10">
                                 <h3 className="text-2xl font-serif font-bold mb-2">Reciclare Industrială</h3>
                                 <p className="text-xs text-muted-foreground">Procesarea fluxurilor masive de metale feroase.</p>
