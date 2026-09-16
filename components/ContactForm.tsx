@@ -1,8 +1,13 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+"use client";
+
+import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
+import { useState, useTransition, type FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { COMPANY } from "@/utils/data";
+import { sendContact } from "@/app/_actions/send-contact";
+import type { RequestResult } from "@/utils/request";
 
 const contact = [
     { icon: Phone, label: "Telefon", val: COMPANY.phone },
@@ -10,7 +15,34 @@ const contact = [
     { icon: MapPin, label: "Locație", val: COMPANY.address },
 ]
 
+const fieldClass =
+    "border-0 border-b border-foreground/10 rounded-none px-0 py-6 text-lg font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/20";
+
+const labelClass =
+    "text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500";
+
+const stepClass =
+    "text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500";
+
 export default function ContactForm() {
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    // Câmpul-capcană: rămâne gol la oameni, se completează la roboții care umplu
+    // orice câmp găsit în formular.
+    const [website, setWebsite] = useState("");
+    const [result, setResult] = useState<RequestResult | null>(null);
+    const [pending, startTransition] = useTransition();
+
+    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        setResult(null);
+        startTransition(async () => {
+            setResult(await sendContact({ kind: "contact", name, email, phone, message, website }));
+        });
+    }
+
     return (
         <section className="pt-24 px-6 lg:px-10 bg-transparent mb-32">
             <div className="max-w-7xl mx-auto">
@@ -52,69 +84,122 @@ export default function ContactForm() {
 
                     {/* Coloana 2: Formular */}
                     <div className="lg:col-span-8 p-8 lg:p-12 rounded-[2rem] border border-border/5 bg-transparent shadow-2xl">
-                        <form className="space-y-12">
+                        {result?.ok ? (
+                            <div className="flex flex-col items-center justify-center text-center gap-5 py-16">
+                                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary-foreground text-background">
+                                    <Check size={28} strokeWidth={3} />
+                                </span>
+                                <h3 className="font-serif text-3xl font-bold text-foreground">Mesajul a plecat</h3>
+                                <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                                    Ți-am trimis o confirmare pe <span className="text-foreground">{email}</span>.
+                                    Îți răspundem în cel mult 24 de ore lucrătoare.
+                                </p>
+                                <a
+                                    href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+                                    className="text-sm font-bold text-secondary-foreground"
+                                >
+                                    Sau sună-ne: {COMPANY.phone}
+                                </a>
+                            </div>
+                        ) : (
+                        <form className="space-y-12" onSubmit={handleSubmit} noValidate>
                             {/* Grid-ul de input-uri: 3 coloane pe desktop pentru a salva spațiu */}
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
 
                                 {/* 01. Nume */}
                                 <div className="group space-y-4">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500">01</span>
-                                        <Label className="text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500">
+                                        <span className={stepClass}>01</span>
+                                        <Label className={labelClass}>
                                             Nume Complet
                                         </Label>
                                     </div>
                                     <Input
                                         type="text"
+                                        required
+                                        autoComplete="name"
                                         placeholder="Popescu Ioan"
-                                        className="border-0 border-b border-foreground/10 rounded-none px-0 py-6 text-lg font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/20"
+                                        value={name}
+                                        onChange={(event) => setName(event.target.value)}
+                                        className={fieldClass}
                                     />
                                 </div>
 
                                 {/* 02. Telefon - NOU INTRODUS */}
                                 <div className="group space-y-4">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500">02</span>
-                                        <Label className="text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500">
+                                        <span className={stepClass}>02</span>
+                                        <Label className={labelClass}>
                                             Nr. Telefon
                                         </Label>
                                     </div>
                                     <Input
                                         type="tel"
+                                        required
+                                        autoComplete="tel"
                                         placeholder="07xx xxx xxx"
-                                        className="border-0 border-b border-foreground/10 rounded-none px-0 py-6 text-lg font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/20"
+                                        value={phone}
+                                        onChange={(event) => setPhone(event.target.value)}
+                                        className={fieldClass}
                                     />
                                 </div>
 
                                 {/* 03. Email */}
                                 <div className="group space-y-4">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500">03</span>
-                                        <Label className="text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500">
+                                        <span className={stepClass}>03</span>
+                                        <Label className={labelClass}>
                                             Adresă Email
                                         </Label>
                                     </div>
                                     <Input
                                         type="email"
+                                        required
+                                        autoComplete="email"
                                         placeholder="contact@email.ro"
-                                        className="border-0 border-b border-foreground/10 rounded-none px-0 py-6 text-lg font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/20"
+                                        value={email}
+                                        onChange={(event) => setEmail(event.target.value)}
+                                        className={fieldClass}
                                     />
                                 </div>
 
                                 {/* 04. Mesaj - Colspan Full */}
                                 <div className="group space-y-4 md:col-span-2 lg:col-span-3">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500">04</span>
-                                        <Label className="text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500">
+                                        <span className={stepClass}>04</span>
+                                        <Label className={labelClass}>
                                             Mesaj
                                         </Label>
                                     </div>
                                     <Textarea
                                         placeholder="Descrieți pe scurt solicitarea dumneavoastră..."
+                                        value={message}
+                                        onChange={(event) => setMessage(event.target.value)}
                                         className="border-0 border-b border-foreground/10 rounded-none px-0 py-4 text-xl font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/20 resize-none min-h-[100px]"
                                     />
                                 </div>
                             </div>
+
+                            {/* Capcana pentru roboți: scoasă din ecran și din ordinea de tabulare. */}
+                            <input
+                                type="text"
+                                name="website"
+                                tabIndex={-1}
+                                autoComplete="off"
+                                aria-hidden="true"
+                                value={website}
+                                onChange={(event) => setWebsite(event.target.value)}
+                                className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                            />
+
+                            {result && !result.ok && (
+                                <p
+                                    role="alert"
+                                    className="rounded-xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-xs leading-relaxed text-destructive"
+                                >
+                                    {result.error}
+                                </p>
+                            )}
 
                             {/* Action Area */}
                             <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-6">
@@ -128,13 +213,14 @@ export default function ContactForm() {
                                             Verificare finală
                                         </span>
                                         <span className="font-serif text-2xl md:text-3xl font-bold text-foreground">
-                                            Trimite Acum
+                                            {pending ? "Se trimite…" : "Trimite Acum"}
                                         </span>
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="group relative flex items-center justify-center w-20 h-20 rounded-full bg-secondary-foreground transition-all duration-500 hover:bg-primary-foreground active:scale-90"
+                                        disabled={pending}
+                                        className="group relative flex items-center justify-center w-20 h-20 rounded-full bg-secondary-foreground transition-all duration-500 hover:bg-primary-foreground active:scale-90 disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100"
                                     >
                                         <Send
                                             className="relative z-10 text-primary group-hover:text-background transition-colors"
@@ -144,6 +230,7 @@ export default function ContactForm() {
                                 </div>
                             </div>
                         </form>
+                        )}
                     </div>
                 </div>
             </div>

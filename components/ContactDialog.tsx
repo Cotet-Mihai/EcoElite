@@ -1,7 +1,32 @@
-import { Mail, Phone, Recycle, Send } from "lucide-react";
+"use client";
+
+import { Check, Mail, Phone, Recycle, Send } from "lucide-react";
+import { useState, useTransition, type FormEvent } from "react";
 import { COMPANY } from "@/utils/data";
+import { sendContact } from "@/app/_actions/send-contact";
+import type { RequestResult } from "@/utils/request";
+
+const fieldClass =
+    "w-full bg-foreground/[0.03] border border-border/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary-foreground/40 transition-colors placeholder:text-muted-foreground/40";
 
 export default function ContactDialog() {
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    // Câmpul-capcană: rămâne gol la oameni, se completează la roboți.
+    const [website, setWebsite] = useState("");
+    const [result, setResult] = useState<RequestResult | null>(null);
+    const [pending, startTransition] = useTransition();
+
+    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        setResult(null);
+        startTransition(async () => {
+            setResult(await sendContact({ kind: "rapid", name, email, phone, message, website }));
+        });
+    }
+
     return (
         // 1. Am setat max-height adaptiv (85vh pe mobil, 550px pe desktop) și scroll vertical pe mobil
         <div className="flex flex-col md:flex-row h-full max-h-[85vh] md:max-h-[550px] overflow-y-auto md:overflow-hidden">
@@ -57,17 +82,40 @@ export default function ContactDialog() {
             {/* Coloana Dreaptă: Formular Compact */}
             {/* Padding adaptiv */}
             <div className="md:w-7/12 p-6 md:p-8 flex flex-col justify-center bg-transparent">
+                {result?.ok ? (
+                    <div className="flex flex-col items-center justify-center text-center gap-4 py-10">
+                        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary-foreground text-background">
+                            <Check size={24} strokeWidth={3} />
+                        </span>
+                        <h4 className="font-bold text-foreground text-lg">Mesajul a plecat</h4>
+                        <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
+                            Ți-am trimis o confirmare pe <span className="text-foreground">{email}</span>.
+                            Te contactăm în cel mult 24 de ore lucrătoare.
+                        </p>
+                        <a
+                            href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+                            className="text-xs font-bold text-secondary-foreground"
+                        >
+                            Sau sună-ne: {COMPANY.phone}
+                        </a>
+                    </div>
+                ) : (
+                <>
                 <div className="mb-6">
                     <h4 className="font-bold text-foreground mb-1 text-lg">Cu ce te putem ajuta?</h4>
                     <p className="text-xs text-muted-foreground">Te vom contacta în cel mai scurt timp.</p>
                 </div>
 
-                <form className="space-y-3">
+                <form className="space-y-3" onSubmit={handleSubmit} noValidate>
                     {/* Nume */}
                     <input
                         type="text"
+                        required
+                        autoComplete="name"
                         placeholder="Numele tău"
-                        className="w-full bg-foreground/[0.03] border border-border/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary-foreground/40 transition-colors placeholder:text-muted-foreground/40"
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+                        className={fieldClass}
                     />
 
                     {/* Grid pentru Telefon și Email */}
@@ -75,13 +123,21 @@ export default function ContactDialog() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <input
                             type="tel"
+                            required
+                            autoComplete="tel"
                             placeholder="Telefon"
-                            className="w-full bg-foreground/[0.03] border border-border/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary-foreground/40 transition-colors placeholder:text-muted-foreground/40"
+                            value={phone}
+                            onChange={(event) => setPhone(event.target.value)}
+                            className={fieldClass}
                         />
                         <input
                             type="email"
+                            required
+                            autoComplete="email"
                             placeholder="Email"
-                            className="w-full bg-foreground/[0.03] border border-border/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary-foreground/40 transition-colors placeholder:text-muted-foreground/40"
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
+                            className={fieldClass}
                         />
                     </div>
 
@@ -89,17 +145,43 @@ export default function ContactDialog() {
                     <textarea
                         placeholder="Mesajul tău..."
                         rows={3}
-                        className="w-full bg-foreground/[0.03] border border-border/10 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary-foreground/40 transition-colors resize-none placeholder:text-muted-foreground/40"
+                        value={message}
+                        onChange={(event) => setMessage(event.target.value)}
+                        className={`${fieldClass} resize-none`}
                     />
 
+                    {/* Capcana pentru roboți: scoasă din ecran și din ordinea de tabulare. */}
+                    <input
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        value={website}
+                        onChange={(event) => setWebsite(event.target.value)}
+                        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                    />
+
+                    {result && !result.ok && (
+                        <p
+                            role="alert"
+                            className="rounded-xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-[11px] leading-relaxed text-destructive"
+                        >
+                            {result.error}
+                        </p>
+                    )}
+
                     <button
-                        type="button"
-                        className="group w-full bg-primary/10 text-primary-foreground hover:bg-primary-foreground hover:text-background border border-primary-foreground/20 font-bold uppercase tracking-[0.2em] text-[10px] py-4 rounded-xl transition-all duration-500 flex items-center justify-center gap-2 mt-2"
+                        type="submit"
+                        disabled={pending}
+                        className="group w-full bg-primary/10 text-primary-foreground hover:bg-primary-foreground hover:text-background border border-primary-foreground/20 font-bold uppercase tracking-[0.2em] text-[10px] py-4 rounded-xl transition-all duration-500 flex items-center justify-center gap-2 mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                        Trimite
+                        {pending ? "Se trimite…" : "Trimite"}
                         <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </button>
                 </form>
+                </>
+                )}
             </div>
 
         </div>
